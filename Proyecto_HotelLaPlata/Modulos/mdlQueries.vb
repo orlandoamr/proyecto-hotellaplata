@@ -80,7 +80,7 @@ Module mdl_Queries
                                 OR d.NombreDepartamento LIKE Concat('%', @Parametro, '%')"
         }
     }
-
+    'Diccionario con todos los queries relacionados a servicios
     Public queriesServicios As New Dictionary(Of String, String) From {
         {
             "insertar", "INSERT INTO [dbo].[Servicios]
@@ -96,43 +96,55 @@ Module mdl_Queries
                          WHERE ServicioId=@ServicioId"
         },
         {
-        "obtener", "SELECT  ServicioId AS ID, Descripcion, Precio, EstadoServicio AS [Estado del Servicio]
-                    FROM    Servicios"
+            "obtener", "SELECT  ServicioId AS ID, Descripcion, Precio, EstadoServicio AS [Estado del Servicio]
+                        FROM    Servicios"
         },
         {
             "eliminar", "DELETE *FROM Servicios WHERE ServicioId=@ServicioId"
+        },
+        {
+            "obtener_disponibles", "SELECT ServicioId, Descripcion AS [Descripción del servicio], Precio AS [Precio del servicio]
+                                    FROM  Servicios WHERE EstadoServicio=1"
         }
     }
+
 
     'Diccionario con todos los queries relacionados a ventas
     Public queriesVentas As New Dictionary(Of String, String) From
      {
         {
-            "insertar_venta", "INSERT INTO DetalleVenta(FkCodCliente, FkCodHabitacion, CostoHabitacion, FechaEntrada, 
-                               Observacion, FkEmpleadoId)
-                               VALUES(@FkCodCliente, @FkCodHabitacion, @CostoHabitacion, @FechaEntrada, @Observacion, 
-                               @FkEmpleadoId)"
+            "obtener", "SELECT Ventas.VentaId, Ventas.FechaEntrada AS [Fecha de entrada], Ventas.TotalVenta AS [Total de la venta], Clientes.NombreCliente AS [Nombre del cliente], Clientes.ApellidoCliente AS [Apellido del cliente], 
+                               Clientes.ClienteId AS [Identidad del cliente]
+                       FROM    Ventas INNER JOIN
+                               Clientes ON Ventas.FkClienteId = Clientes.ClienteId"
         },
         {
-            "actualizar_venta", "UPDATE DetalleVenta SET FkCodCliente=@FkCodCliente,FkCodHabitacion=@FkCodHabitacion,CostoHabitacion=@CostoHabitacion,
-                                FechaEntrada=@FechaEntrada,FechaSalida=@FechaSalida, Observacion=@Observacion,FkEmpleadoId=@FkEmpleadoId
-                                WHERE DetalleVentaId=@DetalleVentaId"
+            "insertar", "INSERT INTO [dbo].[Ventas]
+                                            ([FechaEntrada],[TotalVenta],[FkClienteId],[FkEmpleadoId])
+                               VALUES (@FechaEntrada,@TotalVenta,@FKClienteId,@FKEmpleadoId)"
         },
         {
-            "obtener_ventas", "SELECT dv.DetalleVentaId, c.ClienteId, c.Nombre + ' ' + c.Apellido as Cliente,h.HabitacionId as 'Número de Habitación',
-                               dv.CostoHabitacion, dv.FechaEntrada, dv.FechaSalida, dv.Observacion, e.Nombre as AtendidoPor  FROM DetalleVenta as dv 
-                               INNER JOIN Clientes AS c on c.ClienteId = dv.FkCodCliente INNER JOIN Habitaciones as h on h.HabitacionId = dv.FkCodHabitacion 
-                               INNER JOIN Empleados AS e on e.EmpleadoId = dv.FkEmpleadoId"
+            "actualizar", "UPDATE [dbo].[Ventas]
+                                   SET [FechaEntrada]=@FechaEntrada,[FechaSalida]=@FechaSalida,[TotalVenta]=@TotalVenta,[FkClienteId]=@FkClienteId,[FkEmpleadoId]=@FkEmpleadoId
+                                   WHERE VentaId=@VentaId"
         },
         {
-            "obtener_venta_cliente", "SELECT dv.DetalleVentaId, c.ClienteId, c.Nombre + ' ' + c.Apellido as Cliente,h.HabitacionId, h.NumHabitacion as NumeroHabitacion ,
-                                      dv.CostoHabitacion, dv.FechaEntrada, dv.FechaSalida, dv.Observacion, e.Nombre as AtendidoPor  FROM DetalleVenta as dv 
-                                      INNER JOIN Clientes AS c on c.ClienteId = dv.FkCodCliente 
-                                      INNER JOIN Habitaciones as h on h.HabitacionId = dv.FkCodHabitacion 
-                                      INNER JOIN Empleados AS e on e.EmpleadoId = dv.FkEmpleadoId where c.ClienteId=@ClienteId"
+            "eliminar", "DELETE FROM Ventas WHERE VentaId=@VentaId"
         },
         {
-            "eliminar_venta", "DELETE FROM DetalleVenta WHERE DetalleVentaId=@DetalleVentaId"
+            "obtener_ultima_venta", "SELECT IDENT_CURRENT('Ventas') AS VentaId"
+        },
+        {
+            "insertar_habitaciones", "INSERT INTO [dbo].[DetalleHabitaciones]
+                                            ([HabitacionId],[VentaId])
+                                    VALUES
+                                            (@HabitacionId,@VentaId)"
+        },
+        {
+            "insertar_servicios", "INSERT INTO [dbo].[DetalleServicios]
+                                          ([ServicioId],[VentaId])
+                                   VALUES
+                                          (@ServicioId, @VentaId)"
         },
         {
             "actualizar_salida", "UPDATE DetalleVenta SET FechaSalida=@FechaSalida WHERE DetalleVentaId=@DetalleVentaId"
@@ -167,11 +179,18 @@ Module mdl_Queries
     Public queriesHabitaciones As New Dictionary(Of String, String) From
     {
         {
-            "actualizar_estado", "UPDATE Habitaciones SET EstadoDisponibilidad=@EstadoDisponibilidad 
-                                  WHERE HabitacionId=@HabitacionId"
+            "obtener_disponibles", "SELECT Habitaciones.HabitacionId AS [Número de Habitación], Habitaciones.CostoHabitacion AS [Costo de la Habitación], TipoHabitaciones.Descripcion AS [Tipo de Habitación], Habitaciones.CantCamas AS [Cant. de Camas], 
+                                           TipoCamas.Descripcion AS [Tipo de Cama], Habitaciones.CantAlmohadas AS [Cant. de Almohadas], Habitaciones.CantMesas AS [Cant. de Mesas], Habitaciones.CantSillas AS [Cant. de Sillas], 
+                                           TipoAiresAcondicionados.DescripcionAire AS [Tipo de Aire]
+                                    FROM   Habitaciones INNER JOIN
+                                           TipoAiresAcondicionados ON Habitaciones.FKTipoAireId = TipoAiresAcondicionados.TipoAireId INNER JOIN
+                                           TipoCamas ON Habitaciones.FKTipoCamaId = TipoCamas.TipoCamaId INNER JOIN
+                                           TipoHabitaciones ON Habitaciones.FKTipoHabitacionId = TipoHabitaciones.TipoHabitacionId
+                                           WHERE Habitaciones.EstadoDisponibilidad=1"
         },
         {
-            "obtener_disponibles", "SELECT HabitacionId FROM Habitaciones WHERE EstadoDisponibilidad=1"
+            "actualizar_estado", "UPDATE Habitaciones SET EstadoDisponibilidad=@EstadoDisponibilidad 
+                                  WHERE HabitacionId=@HabitacionId"
         }
     }
 

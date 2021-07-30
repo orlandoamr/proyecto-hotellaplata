@@ -18,7 +18,7 @@ Public Class frmBuscarCliente
     End Sub
 
     Private Sub dgvClientes_DoubleClick(sender As Object, e As EventArgs) Handles dgvClientes.DoubleClick
-        frmNuevoCliente.txtIdentidad.Text = dgvClientes.CurrentRow.Cells(2).Value
+        frmNuevaVenta.txtCodigoCliente.Text = dgvClientes.CurrentRow.Cells(2).Value
         Me.Close()
     End Sub
 End Class

@@ -66,5 +66,8 @@
         MessageBox.Show("Ingrese el campo: " & campo, "Campo Vacío", MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
 
+    Public Sub MsgError2(campo As String, campo2 As String)
+        MessageBox.Show(campo, campo2, MessageBoxButtons.OK, MessageBoxIcon.Error)
+    End Sub
 
 End Module

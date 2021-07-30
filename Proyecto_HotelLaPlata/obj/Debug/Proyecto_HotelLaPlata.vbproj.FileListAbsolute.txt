@@ -132,3 +132,5 @@ C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.exe
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.xml
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.pdb
+C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmAsignarHabitaciones.resources
+C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmAgregarServicios.resources
