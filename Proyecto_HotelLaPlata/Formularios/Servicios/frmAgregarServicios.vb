@@ -1,12 +1,20 @@
 ﻿Public Class frmAgregarServicios
     Private funciones As New clsFuncionesGenerales()
 
-    Dim servicios As New Dictionary(Of String, Integer)
-    Dim idServicios As New List(Of Integer)
+    Public servicios As New Dictionary(Of String, Integer)
+    Public idServicios As New Dictionary(Of Integer, String)
     Private Sub frmAgregarServicios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         funciones.llenarDataGrid(dgvServiciosDisponibles, queriesServicios("obtener_disponibles"))
         dgvServiciosAsignados.Columns("ServicioId").Visible = False
         dgvServiciosDisponibles.Columns("ServicioId").Visible = False
+
+        For Each id In idServicios
+            For Each ser In servicios
+                If id.Value = ser.Key Then
+                    dgvServiciosAsignados.Rows.Add(id.Key, ser.Key, ser.Value)
+                End If
+            Next
+        Next
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
@@ -24,7 +32,7 @@
             Next
 
             If todoBien = True Then
-                idServicios.Add(idServicio)
+                idServicios.Add(idServicio, servicio)
                 servicios.Add(servicio, costoServicio)
                 dgvServiciosAsignados.Rows.Add(idServicio, servicio, costoServicio)
             Else
@@ -39,6 +47,7 @@
         If (dgvServiciosAsignados.SelectedCells.Count > 0) Then
             Dim indice As Integer = dgvServiciosAsignados.CurrentCell.RowIndex
             Dim idServicio = dgvServiciosAsignados.Rows(indice).Cells(0).Value
+
             Dim servicio = dgvServiciosDisponibles.Rows(indice).Cells(1).Value
 
             dgvServiciosAsignados.Rows.RemoveAt(indice)
@@ -53,6 +62,7 @@
             frmNuevaVenta.idServicios = idServicios
             frmNuevaVenta.servicios = servicios
             frmNuevaVenta.actualizarVentaServicios()
+            frmNuevaVenta.actualizarVentaTotal()
             Me.Close()
         Else
             MsgError2("Seleccione al menos un servicio", "Seleccione un servicio")

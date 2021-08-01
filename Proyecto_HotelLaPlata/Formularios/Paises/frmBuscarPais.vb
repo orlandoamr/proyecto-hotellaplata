@@ -1,66 +1,39 @@
-﻿Imports System.Data.SqlClient
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios/Paises
+'   Formulario: frmBuscarPais
+'   Función: mostrar los paises para que el usuario seleccione uno
+'----------------------------------------------------------------------------------------------------------------
 
 Public Class frmBuscarPais
+
+    'Instancias de la clases de clientes y las funciones generales
+    Private funciones As New clsFuncionesGenerales()
+    Private paises As New clsPaises()
+
+    'Evento que se ejecuta al cargar el formulario
     Private Sub frmBuscarPais_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        dgvUpdate()
-    End Sub
-    Private Sub dgvUpdate()
-        Try
-            Conectar()
-            Dim paises As New DataTable
-            Using adaptador As New SqlDataAdapter("select * from Paises", coneccion)
-                adaptador.Fill(paises)
-            End Using
-
-            dgvPaises.DataSource = paises
-            CerrarConeccion()
-        Catch ex As Exception
-            MessageBox.Show("Ha ocurrido un error en la coneccion a la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-
-
+        'Se llena el grid y se ocultan los id para que no sean visibles por el usuario
+        funciones.llenarDataGrid(dgvPaises, queriesPaises("obtener"))
+        dgvPaises.Columns("PaisId").Visible = False
     End Sub
 
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        Dim consulta As String
-        consulta = txtParametro.Text
-        Try
-            Conectar()
-            consulta = "SELECT *FROM Paises WHERE NombrePais='" & consulta & "'"
-            Dim paises As New DataTable
-
-            Using adaptador As New SqlDataAdapter(consulta, coneccion)
-                adaptador.Fill(paises)
-            End Using
-
-            dgvPaises.DataSource = paises
-            CerrarConeccion()
-
-        Catch ex As Exception
-            MessageBox.Show("Ha ocurrido un error en la coneccion con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+    'Evento que se ejecuta al presionar el botón de buscar
+    Private Sub btnBuscarPais_Click(sender As Object, e As EventArgs) Handles btnBuscarPais.Click
+        If txtParametro.Text = "" Then
+            MsgError2("Ingrese un país", "Campo vacío")
+        Else
+            paises._nombrePais = txtParametro.Text
+            paises.obtenerPais(dgvPaises)
+        End If
     End Sub
 
-    Private Sub txtParametro_TextChanged(sender As Object, e As EventArgs) Handles txtParametro.TextChanged
-
-    End Sub
-
+    'Evento que se ejecuta al hacer doble click en una fila del datagrid
     Private Sub dgvPaises_DoubleClick(sender As Object, e As EventArgs) Handles dgvPaises.DoubleClick
-        Try
-            frmNuevoCliente.txtPais.Text = dgvPaises.CurrentRow.Cells(1).Value
-            frmNuevoCliente.idPais = dgvPaises.CurrentRow.Cells(0).Value
-        Catch ex As Exception
+        'Se copian todos el elemento al formulario de nuevo cliente
+        frmNuevoCliente.idPais = dgvPaises.CurrentRow.Cells(0).Value
+        frmNuevoCliente.txtPais.Text = dgvPaises.CurrentRow.Cells(1).Value
 
-        End Try
-
+        'Se cierra este formulario
         Me.Close()
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-
-    Private Sub dgvPaises_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPaises.CellContentClick
-
     End Sub
 End Class

@@ -102,4 +102,12 @@
     Private Sub btnVerClientes_Click(sender As Object, e As EventArgs) Handles btnVerClientes.Click
         switchPanel(frmVerClientesFiltros)
     End Sub
+
+    Private Sub btnNuevaVenta_Click(sender As Object, e As EventArgs) Handles btnNuevaVenta.Click
+        switchPanel(frmNuevaVenta)
+    End Sub
+
+    Private Sub btnVerDetalleVentas_Click(sender As Object, e As EventArgs) Handles btnVerDetalleVentas.Click
+        switchPanel(frmVerDetallesVentas)
+    End Sub
 End Class

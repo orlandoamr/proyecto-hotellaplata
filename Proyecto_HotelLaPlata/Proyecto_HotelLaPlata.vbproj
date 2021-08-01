@@ -81,6 +81,8 @@
     <Compile Include="Clases\clsFuncionesGenerales.vb" />
     <Compile Include="Clases\clsGastosAdicionales.vb" />
     <Compile Include="Clases\clsHabitaciones.vb" />
+    <Compile Include="Clases\clsPaises.vb" />
+    <Compile Include="Clases\clsProductos.vb" />
     <Compile Include="Clases\clsServicios.vb" />
     <Compile Include="Clases\clsVentas.vb" />
     <Compile Include="Formularios\Habitaciones\frmAsignarHabitaciones.Designer.vb">
@@ -89,10 +91,28 @@
     <Compile Include="Formularios\Habitaciones\frmAsignarHabitaciones.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Productos\frmBuscarProducto.Designer.vb">
+      <DependentUpon>frmBuscarProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Productos\frmBuscarProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Servicios\frmAgregarServicios.Designer.vb">
       <DependentUpon>frmAgregarServicios.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Servicios\frmAgregarServicios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ventas\frmActualizarSalida.Designer.vb">
+      <DependentUpon>frmActualizarSalida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ventas\frmActualizarSalida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ventas\frmBuscarVenta.Designer.vb">
+      <DependentUpon>frmBuscarVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ventas\frmBuscarVenta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Ventas\frmNuevaVenta.Designer.vb">
@@ -101,7 +121,7 @@
     <Compile Include="Formularios\Ventas\frmNuevaVenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\dbConec.vb" />
+    <Compile Include="Utilidades\dbConec.vb" />
     <Compile Include="Formularios\Clientes\frmBuscarCliente.Designer.vb">
       <DependentUpon>frmBuscarCliente.vb</DependentUpon>
     </Compile>
@@ -124,12 +144,6 @@
       <DependentUpon>frmBuscarPais.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Paises\frmBuscarPais.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Clientes\frmClientes.Designer.vb">
-      <DependentUpon>frmClientes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Clientes\frmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Configuracion\frmConfiguracion.Designer.vb">
@@ -234,17 +248,17 @@
     <Compile Include="Formularios\Empleados\frmVerRegistrosEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\Funciones.vb" />
+    <Compile Include="Utilidades\Funciones.vb" />
     <Compile Include="Formularios\Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\mdlFuncionesGlobales.vb" />
-    <Compile Include="Modulos\mdlMensajes.vb" />
-    <Compile Include="Modulos\mdlQueries.vb" />
-    <Compile Include="Modulos\mdlValidacionesGlobales.vb" />
+    <Compile Include="Utilidades\mdlFuncionesGlobales.vb" />
+    <Compile Include="Utilidades\mdlMensajes.vb" />
+    <Compile Include="Utilidades\mdlQueries.vb" />
+    <Compile Include="Utilidades\mdlValidacionesGlobales.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -279,6 +293,9 @@
     <EmbeddedResource Include="Formularios\Habitaciones\frmAsignarHabitaciones.resx">
       <DependentUpon>frmAsignarHabitaciones.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Productos\frmBuscarProducto.resx">
+      <DependentUpon>frmBuscarProducto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Servicios\frmAgregarServicios.resx">
       <DependentUpon>frmAgregarServicios.vb</DependentUpon>
     </EmbeddedResource>
@@ -288,11 +305,11 @@
     <EmbeddedResource Include="Formularios\Paises\frmBuscarPais.resx">
       <DependentUpon>frmBuscarPais.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Clientes\frmClientes.resx">
-      <DependentUpon>frmClientes.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Configuracion\frmConfiguracion.resx">
       <DependentUpon>frmConfiguracion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ventas\frmBuscarVenta.resx">
+      <DependentUpon>frmBuscarVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Ventas\frmDetalleVentas.resx">
       <DependentUpon>frmDetalleVentas.vb</DependentUpon>

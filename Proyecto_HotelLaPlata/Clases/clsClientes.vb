@@ -1,8 +1,14 @@
-﻿'Clase para insertar, actualizar, eliminar y buscar clientes.
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Clases
+'   Clase: clsClientes
+'   Función: insertar, actualizar y buscar clientes en la base de datos.
+'----------------------------------------------------------------------------------------------------------------
+'
 Imports System.Data.SqlClient
 
 Public Class clsClientes
-    Inherits clsEjecutarQuery 'Hereda de la clase principal que ejecuta los queries
+    Inherits clsEjecutarQuery 'Hereda de la clase principal que ejecuta los queries para usar los métodos
+    ' ejecutar y obtener
 
     'Propiedades
     Private clienteId As String
@@ -73,7 +79,7 @@ Public Class clsClientes
     End Property
 
 
-    'Función para insertar y actualizar un cliente
+    'Método para insertar y actualizar un cliente
     Public Function guardar(query As String)
         Dim parametros As New List(Of SqlParameter) From {
              New SqlParameter("@ClienteId", clienteId),
@@ -87,7 +93,7 @@ Public Class clsClientes
         Return ejecutar(query, parametros)
     End Function
 
-    'Función para eliminar un cliente.
+    'Método para eliminar un cliente.
     Public Function eliminarCliente(query As String)
         Dim parametros As New List(Of SqlParameter) From {
              New SqlParameter("@ClienteId", clienteId)
@@ -97,7 +103,7 @@ Public Class clsClientes
 
     End Function
 
-    'Función para buscar un cliente por su número de identidad.
+    'Método para buscar un cliente por su número de identidad.
     Public Sub BuscarIdCliente(dgv As DataGridView, query As String)
         Dim parametros As New List(Of SqlParameter) From {
             New SqlParameter("@ClienteId", clienteId)
@@ -107,7 +113,7 @@ Public Class clsClientes
     End Sub
 
 
-    'Función para buscar un cliente por su por un parámetro.
+    'Método para buscar un cliente por parámetro.
     Public Sub BuscarCliente(dgv As DataGridView, query As String)
         Dim parametros As New List(Of SqlParameter) From {
             New SqlParameter("@Parametro", parametroBusqueda)

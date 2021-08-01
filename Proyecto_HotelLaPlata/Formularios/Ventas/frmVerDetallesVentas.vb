@@ -1,67 +1,32 @@
 ﻿'Formulario para visualización de las ventas usando diferentes filtros
 Imports System.Data.SqlClient
 Public Class frmVerDetallesVentas
-    Private Sub frmVerDetallesVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Conectar()
-        dgvRefresh(dgvDetalleVentas, queriesVentas("obtener_ventas"), coneccion)
-        CerrarConeccion()
+    Private funciones As New clsFuncionesGenerales()
+    Private ventas As New clsVentas()
 
-        cmbFiltro.SelectedIndex = 0
-        dtpFecha.MaxDate = System.DateTime.Now
+    Private Sub txtCodigoVenta_TextChanged(sender As Object, e As EventArgs) Handles txtCodigoVenta.TextChanged
 
-    End Sub
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        Conectar()
-        Select Case cmbFiltro.SelectedItem.ToString
-            Case "Año"
-                dgvFill(dgvDetalleVentas, queriesVentas("obtener_ventas_anio"), coneccion, dtpFecha.Value.Year, "@Anio")
-
-            Case "Mes"
-                dgvFill2(dgvDetalleVentas, queriesVentas("obtener_ventas_mes"), coneccion, dtpFecha.Value.Year, dtpFecha.Value.Month, "@Anio", "@Mes")
-
-            Case "Día"
-                Dim fecha = dtpFecha.Value.ToShortDateString()
-                dgvFill(dgvDetalleVentas, queriesVentas("obtener_ventas_dia"), coneccion, fecha, "@FechaEntrada")
-
-            Case "Número de Identidad Cliente"
-                If (txtParametro.Text = "") Then
-                    MsgIngreseParametro()
-                Else
-                    dgvFill(dgvDetalleVentas, queriesVentas("obtener_ventas_cliente"), coneccion, txtParametro.Text, "@ClienteId")
-                End If
-        End Select
-        CerrarConeccion()
-
-
-    End Sub
-
-    Private Sub cmbFiltro_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbFiltro.SelectedIndexChanged
-        If (cmbFiltro.SelectedItem.ToString = "Año") Then
-            dtpFecha.Enabled = True
-            dtpFecha.Format = DateTimePickerFormat.Custom
-            dtpFecha.CustomFormat = "yyyy"
-            dtpFecha.ShowUpDown = True
-            txtParametro.Enabled = False
-        ElseIf cmbFiltro.SelectedItem.ToString = "Mes" Then
-            dtpFecha.Enabled = True
-            dtpFecha.Format = DateTimePickerFormat.Custom
-            dtpFecha.CustomFormat = "MM"
-            dtpFecha.ShowUpDown = True
-            txtParametro.Enabled = False
-        ElseIf cmbFiltro.SelectedItem.ToString = "Día" Then
-            dtpFecha.Enabled = True
-            dtpFecha.Format = DateTimePickerFormat.Custom
-            dtpFecha.CustomFormat = "dd MM yyyy"
-            dtpFecha.ShowUpDown = False
-            txtParametro.Enabled = False
-        Else
-            txtParametro.Enabled = True
-            dtpFecha.Enabled = False
+        If txtCodigoVenta.Text IsNot "" Then
+            ventas._ventaId = Val(txtCodigoVenta.Text)
+            ventas.obtenerHabitacines(dgvHabitaciones)
+            ventas.obtenerServicios(dgvServicios)
+            ventas.obtenerVentaId(dgvVenta)
         End If
 
     End Sub
 
-    Private Sub dgvDetalleVentas_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDetalleVentas.CellDoubleClick
-        frmGastosAdicionales.TxtCodigoDetalleVenta.Text = dgvDetalleVentas.CurrentRow.Cells(4).Value
+    Private Sub btnBuscarVenta_Click(sender As Object, e As EventArgs) Handles btnBuscarVenta.Click
+        frmBuscarVenta.Show()
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btnLimpiarCampos_Click(sender As Object, e As EventArgs) Handles btnLimpiarCampos.Click
+        txtCodigoVenta.Clear()
+        dgvServicios.DataSource = Nothing
+        dgvHabitaciones.DataSource = Nothing
+        dgvVenta.DataSource = Nothing
     End Sub
 End Class

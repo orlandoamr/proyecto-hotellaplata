@@ -22,32 +22,19 @@ Partial Class frmBuscarPais
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lbMes = New System.Windows.Forms.Label()
-        Me.txtParametro = New System.Windows.Forms.TextBox()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lbParametro = New System.Windows.Forms.Label()
-        Me.dgvPaises = New System.Windows.Forms.DataGridView()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnRecargar = New System.Windows.Forms.Button()
+        Me.btnBuscarPais = New System.Windows.Forms.Button()
+        Me.txtParametro = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.dgvPaises = New System.Windows.Forms.DataGridView()
         CType(Me.dgvPaises, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'lbMes
-        '
-        Me.lbMes.AutoSize = True
-        Me.lbMes.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbMes.Location = New System.Drawing.Point(111, 49)
-        Me.lbMes.Name = "lbMes"
-        Me.lbMes.Size = New System.Drawing.Size(0, 20)
-        Me.lbMes.TabIndex = 62
-        '
-        'txtParametro
-        '
-        Me.txtParametro.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtParametro.Location = New System.Drawing.Point(228, 44)
-        Me.txtParametro.Name = "txtParametro"
-        Me.txtParametro.Size = New System.Drawing.Size(200, 24)
-        Me.txtParametro.TabIndex = 58
         '
         'lbParametro
         '
@@ -55,65 +42,137 @@ Partial Class frmBuscarPais
         Me.lbParametro.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbParametro.Location = New System.Drawing.Point(111, 4)
         Me.lbParametro.Name = "lbParametro"
-        Me.lbParametro.Size = New System.Drawing.Size(0, 20)
+        Me.lbParametro.Size = New System.Drawing.Size(0, 17)
         Me.lbParametro.TabIndex = 61
         '
-        'dgvPaises
+        'Label3
         '
-        Me.dgvPaises.AllowUserToAddRows = False
-        Me.dgvPaises.AllowUserToDeleteRows = False
-        Me.dgvPaises.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPaises.Location = New System.Drawing.Point(149, 125)
-        Me.dgvPaises.Margin = New System.Windows.Forms.Padding(2)
-        Me.dgvPaises.Name = "dgvPaises"
-        Me.dgvPaises.ReadOnly = True
-        Me.dgvPaises.RowHeadersWidth = 51
-        Me.dgvPaises.RowTemplate.Height = 24
-        Me.dgvPaises.Size = New System.Drawing.Size(303, 367)
-        Me.dgvPaises.TabIndex = 55
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(160, 49)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(436, 20)
+        Me.Label3.TabIndex = 160
+        Me.Label3.Text = "Haga doble click en el registro de un cliente para copiarlo"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(87, 44)
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(21, 103)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(123, 20)
-        Me.Label1.TabIndex = 63
-        Me.Label1.Text = "Nombre del país"
+        Me.Label1.Size = New System.Drawing.Size(226, 20)
+        Me.Label1.TabIndex = 159
+        Me.Label1.Text = "Ingrese un nombre de un país"
         '
-        'btnBuscar
+        'btnRecargar
         '
-        Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscar.Location = New System.Drawing.Point(455, 34)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(92, 39)
-        Me.btnBuscar.TabIndex = 59
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = True
+        Me.btnRecargar.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.btnRecargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRecargar.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRecargar.ForeColor = System.Drawing.Color.GhostWhite
+        Me.btnRecargar.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Sync_icon
+        Me.btnRecargar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnRecargar.Location = New System.Drawing.Point(416, 448)
+        Me.btnRecargar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnRecargar.Name = "btnRecargar"
+        Me.btnRecargar.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
+        Me.btnRecargar.Size = New System.Drawing.Size(298, 48)
+        Me.btnRecargar.TabIndex = 157
+        Me.btnRecargar.Text = "Recargar"
+        Me.btnRecargar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRecargar.UseVisualStyleBackColor = False
         '
-        'Label2
+        'btnBuscarPais
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.150944!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(163, 89)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(289, 16)
-        Me.Label2.TabIndex = 64
-        Me.Label2.Text = "Haga doble click en un país para seleccionarlo"
+        Me.btnBuscarPais.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.btnBuscarPais.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarPais.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarPais.ForeColor = System.Drawing.Color.GhostWhite
+        Me.btnBuscarPais.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Search_icon1
+        Me.btnBuscarPais.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnBuscarPais.Location = New System.Drawing.Point(25, 184)
+        Me.btnBuscarPais.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnBuscarPais.Name = "btnBuscarPais"
+        Me.btnBuscarPais.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
+        Me.btnBuscarPais.Size = New System.Drawing.Size(299, 48)
+        Me.btnBuscarPais.TabIndex = 156
+        Me.btnBuscarPais.Text = "Buscar"
+        Me.btnBuscarPais.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBuscarPais.UseVisualStyleBackColor = False
+        '
+        'txtParametro
+        '
+        Me.txtParametro.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtParametro.Location = New System.Drawing.Point(25, 126)
+        Me.txtParametro.Name = "txtParametro"
+        Me.txtParametro.Size = New System.Drawing.Size(299, 26)
+        Me.txtParametro.TabIndex = 154
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(314, 9)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(115, 23)
+        Me.Label10.TabIndex = 161
+        Me.Label10.Text = "Buscar país"
+        '
+        'dgvPaises
+        '
+        Me.dgvPaises.AllowUserToAddRows = False
+        Me.dgvPaises.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvPaises.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgvPaises.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(151, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPaises.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvPaises.ColumnHeadersHeight = 35
+        Me.dgvPaises.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvPaises.EnableHeadersVisualStyles = False
+        Me.dgvPaises.Location = New System.Drawing.Point(369, 83)
+        Me.dgvPaises.Name = "dgvPaises"
+        Me.dgvPaises.ReadOnly = True
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPaises.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvPaises.RowHeadersWidth = 51
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvPaises.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvPaises.RowTemplate.Height = 24
+        Me.dgvPaises.Size = New System.Drawing.Size(362, 360)
+        Me.dgvPaises.TabIndex = 162
         '
         'frmBuscarPais
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(612, 528)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.lbMes)
-        Me.Controls.Add(Me.lbParametro)
-        Me.Controls.Add(Me.btnBuscar)
-        Me.Controls.Add(Me.txtParametro)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(769, 528)
         Me.Controls.Add(Me.dgvPaises)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnRecargar)
+        Me.Controls.Add(Me.btnBuscarPais)
+        Me.Controls.Add(Me.txtParametro)
+        Me.Controls.Add(Me.lbParametro)
         Me.Name = "frmBuscarPais"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmBuscarPais"
@@ -122,12 +181,12 @@ Partial Class frmBuscarPais
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents lbMes As Label
-    Friend WithEvents txtParametro As TextBox
     Friend WithEvents lbParametro As Label
+    Private WithEvents Label3 As Label
+    Private WithEvents Label1 As Label
+    Friend WithEvents btnRecargar As Button
+    Friend WithEvents btnBuscarPais As Button
+    Friend WithEvents txtParametro As TextBox
+    Friend WithEvents Label10 As Label
     Friend WithEvents dgvPaises As DataGridView
-    Friend WithEvents Label1 As Label
-    Friend WithEvents btnBuscar As Button
-    Friend WithEvents Label2 As Label
 End Class

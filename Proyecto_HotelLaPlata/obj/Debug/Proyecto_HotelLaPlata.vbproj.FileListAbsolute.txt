@@ -105,7 +105,6 @@ C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmBuscarDepartamentos.resources
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmBuscarDetallesVentas.resources
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmBuscarPais.resources
-C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmClientes.resources
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmConfiguracion.resources
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmDetalleVentas.resources
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmEditarUsurarios.resources
@@ -134,3 +133,5 @@ C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.pdb
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmAsignarHabitaciones.resources
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmAgregarServicios.resources
+C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmBuscarVenta.resources
+C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmBuscarProducto.resources

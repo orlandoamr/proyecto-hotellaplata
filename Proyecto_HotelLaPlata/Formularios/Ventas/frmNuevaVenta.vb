@@ -1,25 +1,29 @@
 ﻿Public Class frmNuevaVenta
     Public servicios As New Dictionary(Of String, Integer)
-    Public idServicios As New List(Of Integer)
-
+    Public idServicios As New Dictionary(Of Integer, String)
     Public habitaciones As New Dictionary(Of Integer, Integer)
 
     Private funciones As New clsFuncionesGenerales()
     Private ventas As New clsVentas()
-    Private totalVenta As Integer = 0
 
-    Private editar As Boolean = False
+    Private totalVenta As Integer = 0
 
     Private Sub frmNuevaVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         funciones.llenarDataGrid(dgvVentas, queriesVentas("obtener"))
+
     End Sub
 
     Private Sub btnAgregarHabitaciones_Click(sender As Object, e As EventArgs) Handles btnAgregarHabitaciones.Click
+        frmAsignarHabitaciones.habitaciones = habitaciones
         frmAsignarHabitaciones.Show()
+
     End Sub
 
     Private Sub btnAgregarServicios_Click(sender As Object, e As EventArgs) Handles btnAgregarServicios.Click
+        frmAgregarServicios.idServicios = idServicios
+        frmAgregarServicios.servicios = servicios
         frmAgregarServicios.Show()
+
     End Sub
 
     Private Sub btnBuscarCliente_Click(sender As Object, e As EventArgs) Handles btnBuscarCliente.Click
@@ -27,27 +31,41 @@
     End Sub
 
     Public Sub actualizarVentaHabitaciones()
+        lbHabitacionesAsignadas.Items.Clear()
 
+        For Each habitacion In habitaciones
+            lbHabitacionesAsignadas.Items.Add("Número de habitación: " & habitacion.Key & ", Costo por día: L." & habitacion.Value)
+        Next
 
-        If habitaciones IsNot Nothing Then
-            For Each habitacion In habitaciones
-                lbHabitacionesAsignadas.Items.Add("Número de habitación: " & habitacion.Key & ", Costo: L." & habitacion.Value)
-                totalVenta = totalVenta + habitacion.Value
-            Next
-        End If
-
-        txtTotalVenta.Text = totalVenta
     End Sub
 
     Public Sub actualizarVentaServicios()
+        lbServicios.Items.Clear()
 
-        If servicios IsNot Nothing Then
-            For Each servicio In servicios
-                lbServicios.Items.Add(servicio.Key & ", Costo: L." & servicio.Value)
-                totalVenta = totalVenta + servicio.Value
-            Next
+        For Each servicio In servicios
+            lbServicios.Items.Add(servicio.Key & ", Costo por día: L." & servicio.Value)
+        Next
+
+    End Sub
+    Public Sub actualizarVentaTotal()
+        Dim totalVenta As Integer = 0
+
+        For Each servicio In servicios
+            totalVenta += servicio.Value
+        Next
+
+        For Each habitacion In habitaciones
+            totalVenta += habitacion.Value
+        Next
+
+        Dim dias As Integer
+        If (txtEstadia.Text = "") Then
+            dias = 0
+        Else
+            dias = Val(txtEstadia.Text)
         End If
-        txtTotalVenta.Text = totalVenta
+
+        txtTotalVenta.Text = totalVenta * dias
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
@@ -57,50 +75,45 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If txtCodigoCliente.Text = "" Then
             MsgCampoVacio("código del cliente")
+        ElseIf txtEstadia.Text = "" Then
+            MsgCampoVacio("días de estadia")
 
         ElseIf habitaciones.Count = 0 Then
             MsgError2("Asigne al menos una habitación", "Seleccione una habitación")
 
         Else
             ventas._fechaEntrada = dtpFechaEntrada.Value
+            ventas._diasEstadia = txtEstadia.Text
             ventas._costoTotal = Val(txtTotalVenta.Text)
             ventas._idCliente = txtCodigoCliente.Text
             ventas._idEmpleado = "1615200084558"
 
-            If editar = True Then
-                ventas._ventaId = Val(txtCodigoVenta.Text)
+            Dim res = ventas.insertar()
 
-                Dim res = ventas.actualizar()
+            If res(0) = False Then
+                MsgError(res(1))
 
-                If res(0) = False Then
-                    MsgError(res(1))
-                Else
-                    MsgActualizacionExitosa()
-                    limpiarCampos()
-                End If
             Else
-                Dim res = ventas.insertar()
+                Dim idVenta = ventas.obtenerUltimaVenta()
+                For Each habitacion In habitaciones
+                    ventas._ventaId = idVenta
+                    ventas._habitacionId = habitacion.Key
+                    ventas.insertarHabitaciones()
+                Next
+                For Each servicio In idServicios
+                    ventas._ventaId = idVenta
+                    ventas._servicioId = servicio.Key
+                    ventas.insertarServicios()
+                Next
 
-                If res(0) = False Then
-                    MsgError(res(1))
-                Else
-                    Dim idVenta = ventas.obtenerUltimaVenta()
-                    For Each habitacion In habitaciones
-                        ventas.insertarHabitaciones(idVenta, habitacion.Key)
-                    Next
-                    For Each servicio In idServicios
-                        ventas.insertarServicios(idVenta, servicio)
-                    Next
-                    MsgRegistroExitoso()
-                    limpiarCampos()
-                End If
+                MsgRegistroExitoso()
+                limpiarCampos()
             End If
             funciones.llenarDataGrid(dgvVentas, queriesVentas("obtener"))
         End If
     End Sub
 
     Private Sub limpiarCampos()
-        editar = False
         txtTotalVenta.Clear()
         txtCodigoCliente.Clear()
         txtCodigoVenta.Clear()
@@ -111,30 +124,29 @@
         habitaciones.Clear()
         servicios.Clear()
     End Sub
+    Private Sub dgvVentas_DoubleClick(sender As Object, e As EventArgs) Handles dgvVentas.DoubleClick
+        'Dim idVenta = dgvVentas.CurrentRow.Cells(0).Value
 
-    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        'ventas._ventaId = idVenta
+        'ventas.obtenerHabitacines(habitaciones)
+        'ventas.obtenerServicios(servicios)
+        'actualizarVentaHabitaciones()
+        'actualizarVentaServicios()
+
+        'txtCodigoVenta.Text = dgvVentas.CurrentRow.Cells(0).Value
+        'txtTotalVenta.Text = dgvVentas.CurrentRow.Cells(2).Value
+        'txtCodigoCliente.Text = dgvVentas.CurrentRow.Cells(5).Value
+    End Sub
+
+    Private Sub btnLimpiarCampos_Click(sender As Object, e As EventArgs) Handles btnLimpiarCampos.Click
         limpiarCampos()
     End Sub
 
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        If txtCodigoVenta.Text = "" Then
-            MsgCampoVacio("código de la venta")
-        Else
-            ventas._ventaId = Val(txtCodigoVenta.Text)
-            Dim res = ventas.eliminar()
-
-            If res(0) = False Then
-                MsgError(res(1))
-            Else
-                MsgEliminacionExitosa()
-                limpiarCampos()
-            End If
-        End If
+    Private Sub txtEstadia_TextChanged(sender As Object, e As EventArgs) Handles txtEstadia.TextChanged
+        actualizarVentaTotal()
     End Sub
 
-    Private Sub dgvVentas_DoubleClick(sender As Object, e As EventArgs) Handles dgvVentas.DoubleClick
-        txtCodigoVenta.Text = dgvVentas.CurrentRow.Cells(0).Value
-        txtTotalVenta.Text = dgvVentas.CurrentRow.Cells(2).Value
-        txtCodigoCliente.Text = dgvVentas.CurrentRow.Cells(5).Value
+    Private Sub txtEstadia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEstadia.KeyPress
+        soloNumeros(e)
     End Sub
 End Class

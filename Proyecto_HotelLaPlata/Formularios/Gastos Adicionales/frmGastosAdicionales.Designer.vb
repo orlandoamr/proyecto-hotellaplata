@@ -22,7 +22,9 @@ Partial Class frmGastosAdicionales
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BtnActualizar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -33,39 +35,29 @@ Partial Class frmGastosAdicionales
         Me.TxtProducto = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BtnGuardar = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtCodigoDetalleVenta = New System.Windows.Forms.TextBox()
-        Me.TxtCodigo = New System.Windows.Forms.TextBox()
-        Me.DgvGastosAdicionales = New System.Windows.Forms.DataGridView()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtBuscarCliente = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.btnBuscarVenta = New System.Windows.Forms.Button()
+        Me.txtCodigoVenta = New System.Windows.Forms.TextBox()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.btnRecargar = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
-        CType(Me.DgvGastosAdicionales, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dgvGastosAdicionales = New System.Windows.Forms.DataGridView()
+        Me.btnBuscarVent = New System.Windows.Forms.Button()
+        Me.btnBuscarCliente = New System.Windows.Forms.Button()
+        Me.btnLimpiarCampos = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnBuscarVenta = New System.Windows.Forms.Button()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        CType(Me.dgvGastosAdicionales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'BtnBuscar
-        '
-        Me.BtnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBuscar.Location = New System.Drawing.Point(1009, 96)
-        Me.BtnBuscar.Margin = New System.Windows.Forms.Padding(4)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(97, 48)
-        Me.BtnBuscar.TabIndex = 126
-        Me.BtnBuscar.Text = "Buscar"
-        Me.BtnBuscar.UseVisualStyleBackColor = True
         '
         'BtnActualizar
         '
         Me.BtnActualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnActualizar.Location = New System.Drawing.Point(428, 720)
-        Me.BtnActualizar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnActualizar.Location = New System.Drawing.Point(757, 696)
         Me.BtnActualizar.Name = "BtnActualizar"
-        Me.BtnActualizar.Size = New System.Drawing.Size(153, 68)
+        Me.BtnActualizar.Size = New System.Drawing.Size(115, 55)
         Me.BtnActualizar.TabIndex = 125
         Me.BtnActualizar.Text = "Actualizar"
         Me.BtnActualizar.UseVisualStyleBackColor = True
@@ -73,10 +65,9 @@ Partial Class frmGastosAdicionales
         'BtnEliminar
         '
         Me.BtnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEliminar.Location = New System.Drawing.Point(627, 720)
-        Me.BtnEliminar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnEliminar.Location = New System.Drawing.Point(901, 696)
         Me.BtnEliminar.Name = "BtnEliminar"
-        Me.BtnEliminar.Size = New System.Drawing.Size(153, 68)
+        Me.BtnEliminar.Size = New System.Drawing.Size(115, 55)
         Me.BtnEliminar.TabIndex = 124
         Me.BtnEliminar.Text = "Eliminar"
         Me.BtnEliminar.UseVisualStyleBackColor = True
@@ -84,228 +75,293 @@ Partial Class frmGastosAdicionales
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(32, 406)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(37, 509)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(46, 20)
+        Me.Label5.Size = New System.Drawing.Size(42, 20)
         Me.Label5.TabIndex = 123
         Me.Label5.Text = "Total"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(32, 302)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(36, 364)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(75, 20)
+        Me.Label4.Size = New System.Drawing.Size(78, 20)
         Me.Label4.TabIndex = 122
         Me.Label4.Text = "Cantidad"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(31, 255)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(37, 285)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 20)
+        Me.Label3.Size = New System.Drawing.Size(77, 20)
         Me.Label3.TabIndex = 121
         Me.Label3.Text = "Producto"
         '
         'TxtTotal
         '
         Me.TxtTotal.Enabled = False
-        Me.TxtTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtTotal.Location = New System.Drawing.Point(344, 401)
-        Me.TxtTotal.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtTotal.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtTotal.Location = New System.Drawing.Point(40, 532)
         Me.TxtTotal.Name = "TxtTotal"
-        Me.TxtTotal.Size = New System.Drawing.Size(125, 27)
+        Me.TxtTotal.Size = New System.Drawing.Size(298, 26)
         Me.TxtTotal.TabIndex = 120
         '
         'TxtCantidad
         '
-        Me.TxtCantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCantidad.Location = New System.Drawing.Point(344, 297)
-        Me.TxtCantidad.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtCantidad.AccessibleName = "cantidad"
+        Me.TxtCantidad.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCantidad.Location = New System.Drawing.Point(39, 384)
         Me.TxtCantidad.Name = "TxtCantidad"
-        Me.TxtCantidad.Size = New System.Drawing.Size(125, 27)
+        Me.TxtCantidad.Size = New System.Drawing.Size(299, 26)
         Me.TxtCantidad.TabIndex = 119
         '
         'TxtProducto
         '
+        Me.TxtProducto.AccessibleName = "producto"
         Me.TxtProducto.Enabled = False
-        Me.TxtProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtProducto.Location = New System.Drawing.Point(264, 250)
-        Me.TxtProducto.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtProducto.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtProducto.Location = New System.Drawing.Point(39, 305)
         Me.TxtProducto.Name = "TxtProducto"
-        Me.TxtProducto.Size = New System.Drawing.Size(205, 27)
+        Me.TxtProducto.Size = New System.Drawing.Size(252, 26)
         Me.TxtProducto.TabIndex = 118
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(31, 207)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(37, 214)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(167, 20)
+        Me.Label2.Size = New System.Drawing.Size(113, 20)
         Me.Label2.TabIndex = 117
-        Me.Label2.Text = "Codigo Detalle Venta"
+        Me.Label2.Text = "Codigo Venta"
         '
         'BtnGuardar
         '
         Me.BtnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnGuardar.Location = New System.Drawing.Point(227, 720)
-        Me.BtnGuardar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnGuardar.Location = New System.Drawing.Point(618, 696)
         Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(153, 68)
+        Me.BtnGuardar.Size = New System.Drawing.Size(115, 55)
         Me.BtnGuardar.TabIndex = 116
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
-        'Label1
+        'txtCodigoVenta
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(31, 161)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(61, 20)
-        Me.Label1.TabIndex = 115
-        Me.Label1.Text = "Codigo"
+        Me.txtCodigoVenta.AccessibleName = "código de la venta"
+        Me.txtCodigoVenta.Enabled = False
+        Me.txtCodigoVenta.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigoVenta.Location = New System.Drawing.Point(40, 234)
+        Me.txtCodigoVenta.Name = "txtCodigoVenta"
+        Me.txtCodigoVenta.Size = New System.Drawing.Size(251, 26)
+        Me.txtCodigoVenta.TabIndex = 114
         '
-        'TxtCodigoDetalleVenta
+        'txtCodigo
         '
-        Me.TxtCodigoDetalleVenta.Enabled = False
-        Me.TxtCodigoDetalleVenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCodigoDetalleVenta.Location = New System.Drawing.Point(361, 202)
-        Me.TxtCodigoDetalleVenta.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtCodigoDetalleVenta.Name = "TxtCodigoDetalleVenta"
-        Me.TxtCodigoDetalleVenta.Size = New System.Drawing.Size(108, 27)
-        Me.TxtCodigoDetalleVenta.TabIndex = 114
-        '
-        'TxtCodigo
-        '
-        Me.TxtCodigo.Enabled = False
-        Me.TxtCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCodigo.Location = New System.Drawing.Point(361, 156)
-        Me.TxtCodigo.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtCodigo.Name = "TxtCodigo"
-        Me.TxtCodigo.Size = New System.Drawing.Size(108, 27)
-        Me.TxtCodigo.TabIndex = 113
-        '
-        'DgvGastosAdicionales
-        '
-        Me.DgvGastosAdicionales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvGastosAdicionales.Location = New System.Drawing.Point(491, 156)
-        Me.DgvGastosAdicionales.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.DgvGastosAdicionales.Name = "DgvGastosAdicionales"
-        Me.DgvGastosAdicionales.ReadOnly = True
-        Me.DgvGastosAdicionales.RowHeadersWidth = 51
-        Me.DgvGastosAdicionales.RowTemplate.Height = 24
-        Me.DgvGastosAdicionales.Size = New System.Drawing.Size(820, 353)
-        Me.DgvGastosAdicionales.TabIndex = 112
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.150944!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(658, 77)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(302, 17)
-        Me.Label6.TabIndex = 130
-        Me.Label6.Text = "Buscar registros de un cliente por su identidad"
-        '
-        'txtBuscarCliente
-        '
-        Me.txtBuscarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscarCliente.Location = New System.Drawing.Point(661, 105)
-        Me.txtBuscarCliente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtBuscarCliente.MaxLength = 16
-        Me.txtBuscarCliente.Name = "txtBuscarCliente"
-        Me.txtBuscarCliente.Size = New System.Drawing.Size(299, 27)
-        Me.txtBuscarCliente.TabIndex = 129
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.icons8_search_24
-        Me.Button1.Location = New System.Drawing.Point(193, 244)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(63, 42)
-        Me.Button1.TabIndex = 128
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'btnBuscarVenta
-        '
-        Me.btnBuscarVenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarVenta.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.icons8_search_24
-        Me.btnBuscarVenta.Location = New System.Drawing.Point(291, 196)
-        Me.btnBuscarVenta.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnBuscarVenta.Name = "btnBuscarVenta"
-        Me.btnBuscarVenta.Size = New System.Drawing.Size(63, 42)
-        Me.btnBuscarVenta.TabIndex = 127
-        Me.btnBuscarVenta.UseVisualStyleBackColor = True
+        Me.txtCodigo.Enabled = False
+        Me.txtCodigo.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigo.Location = New System.Drawing.Point(39, 153)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(299, 26)
+        Me.txtCodigo.TabIndex = 113
         '
         'txtPrecio
         '
         Me.txtPrecio.Enabled = False
-        Me.txtPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrecio.Location = New System.Drawing.Point(344, 352)
-        Me.txtPrecio.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPrecio.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPrecio.Location = New System.Drawing.Point(40, 459)
         Me.txtPrecio.Name = "txtPrecio"
-        Me.txtPrecio.Size = New System.Drawing.Size(125, 27)
+        Me.txtPrecio.Size = New System.Drawing.Size(298, 26)
         Me.txtPrecio.TabIndex = 131
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(32, 357)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(37, 436)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(57, 20)
+        Me.Label7.Size = New System.Drawing.Size(56, 20)
         Me.Label7.TabIndex = 132
         Me.Label7.Text = "Precio"
-        '
-        'btnRecargar
-        '
-        Me.btnRecargar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRecargar.Location = New System.Drawing.Point(851, 514)
-        Me.btnRecargar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnRecargar.Name = "btnRecargar"
-        Me.btnRecargar.Size = New System.Drawing.Size(127, 44)
-        Me.btnRecargar.TabIndex = 133
-        Me.btnRecargar.Text = "Recargar"
-        Me.btnRecargar.UseVisualStyleBackColor = True
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.22642!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(579, 11)
+        Me.Label8.Location = New System.Drawing.Point(466, 9)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(215, 25)
+        Me.Label8.Size = New System.Drawing.Size(172, 20)
         Me.Label8.TabIndex = 134
         Me.Label8.Text = "Gastos Adicionales"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(37, 133)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(136, 20)
+        Me.Label1.TabIndex = 115
+        Me.Label1.Text = "Codigo del gasto"
+        '
+        'dgvGastosAdicionales
+        '
+        Me.dgvGastosAdicionales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvGastosAdicionales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgvGastosAdicionales.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(151, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvGastosAdicionales.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvGastosAdicionales.ColumnHeadersHeight = 35
+        Me.dgvGastosAdicionales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvGastosAdicionales.EnableHeadersVisualStyles = False
+        Me.dgvGastosAdicionales.Location = New System.Drawing.Point(369, 88)
+        Me.dgvGastosAdicionales.Name = "dgvGastosAdicionales"
+        Me.dgvGastosAdicionales.ReadOnly = True
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvGastosAdicionales.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvGastosAdicionales.RowHeadersWidth = 51
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvGastosAdicionales.RowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvGastosAdicionales.RowTemplate.Height = 24
+        Me.dgvGastosAdicionales.Size = New System.Drawing.Size(686, 587)
+        Me.dgvGastosAdicionales.TabIndex = 137
+        '
+        'btnBuscarVent
+        '
+        Me.btnBuscarVent.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.btnBuscarVent.FlatAppearance.BorderSize = 0
+        Me.btnBuscarVent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarVent.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarVent.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Search_icon1
+        Me.btnBuscarVent.Location = New System.Drawing.Point(296, 227)
+        Me.btnBuscarVent.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnBuscarVent.Name = "btnBuscarVent"
+        Me.btnBuscarVent.Size = New System.Drawing.Size(42, 41)
+        Me.btnBuscarVent.TabIndex = 141
+        Me.btnBuscarVent.UseVisualStyleBackColor = False
+        '
+        'btnBuscarCliente
+        '
+        Me.btnBuscarCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.btnBuscarCliente.FlatAppearance.BorderSize = 0
+        Me.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarCliente.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarCliente.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Search_icon1
+        Me.btnBuscarCliente.Location = New System.Drawing.Point(296, 298)
+        Me.btnBuscarCliente.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnBuscarCliente.Name = "btnBuscarCliente"
+        Me.btnBuscarCliente.Size = New System.Drawing.Size(42, 41)
+        Me.btnBuscarCliente.TabIndex = 140
+        Me.btnBuscarCliente.UseVisualStyleBackColor = False
+        '
+        'btnLimpiarCampos
+        '
+        Me.btnLimpiarCampos.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.btnLimpiarCampos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.btnLimpiarCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLimpiarCampos.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLimpiarCampos.ForeColor = System.Drawing.Color.AliceBlue
+        Me.btnLimpiarCampos.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Clear_Symbol_icon_2
+        Me.btnLimpiarCampos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnLimpiarCampos.Location = New System.Drawing.Point(39, 757)
+        Me.btnLimpiarCampos.Name = "btnLimpiarCampos"
+        Me.btnLimpiarCampos.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
+        Me.btnLimpiarCampos.Size = New System.Drawing.Size(298, 48)
+        Me.btnLimpiarCampos.TabIndex = 139
+        Me.btnLimpiarCampos.Text = "Limpiar"
+        Me.btnLimpiarCampos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLimpiarCampos.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.GhostWhite
+        Me.Button2.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Save_icon
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.Location = New System.Drawing.Point(39, 703)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
+        Me.Button2.Size = New System.Drawing.Size(298, 48)
+        Me.Button2.TabIndex = 138
+        Me.Button2.Text = "Guardar"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.18868!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.icons8_search_24
+        Me.Button1.Location = New System.Drawing.Point(343, 17)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(47, 34)
+        Me.Button1.TabIndex = 128
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'btnBuscarVenta
+        '
+        Me.btnBuscarVenta.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarVenta.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.icons8_search_24
+        Me.btnBuscarVenta.Location = New System.Drawing.Point(278, 17)
+        Me.btnBuscarVenta.Name = "btnBuscarVenta"
+        Me.btnBuscarVenta.Size = New System.Drawing.Size(47, 34)
+        Me.btnBuscarVenta.TabIndex = 127
+        Me.btnBuscarVenta.UseVisualStyleBackColor = True
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCerrar.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Delete_icon
+        Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCerrar.Location = New System.Drawing.Point(17, 19)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.btnCerrar.Size = New System.Drawing.Size(45, 42)
+        Me.btnCerrar.TabIndex = 158
+        Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCerrar.UseVisualStyleBackColor = True
+        '
         'frmGastosAdicionales
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1364, 825)
+        Me.ClientSize = New System.Drawing.Size(1077, 852)
+        Me.Controls.Add(Me.btnCerrar)
+        Me.Controls.Add(Me.btnBuscarVent)
+        Me.Controls.Add(Me.btnBuscarCliente)
+        Me.Controls.Add(Me.btnLimpiarCampos)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.dgvGastosAdicionales)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.btnRecargar)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtPrecio)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.txtBuscarCliente)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnBuscarVenta)
-        Me.Controls.Add(Me.BtnBuscar)
         Me.Controls.Add(Me.BtnActualizar)
         Me.Controls.Add(Me.BtnEliminar)
         Me.Controls.Add(Me.Label5)
@@ -317,21 +373,17 @@ Partial Class frmGastosAdicionales
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TxtCodigoDetalleVenta)
-        Me.Controls.Add(Me.TxtCodigo)
-        Me.Controls.Add(Me.DgvGastosAdicionales)
+        Me.Controls.Add(Me.txtCodigoVenta)
+        Me.Controls.Add(Me.txtCodigo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmGastosAdicionales"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmGastosAdicionales"
-        CType(Me.DgvGastosAdicionales, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvGastosAdicionales, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents BtnBuscar As Button
     Friend WithEvents BtnActualizar As Button
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents Label5 As Label
@@ -342,16 +394,18 @@ Partial Class frmGastosAdicionales
     Friend WithEvents TxtProducto As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents BtnGuardar As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TxtCodigoDetalleVenta As TextBox
-    Friend WithEvents TxtCodigo As TextBox
-    Friend WithEvents DgvGastosAdicionales As DataGridView
+    Friend WithEvents txtCodigo As TextBox
     Friend WithEvents btnBuscarVenta As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents Label6 As Label
-    Friend WithEvents txtBuscarCliente As TextBox
     Friend WithEvents txtPrecio As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents btnRecargar As Button
     Friend WithEvents Label8 As Label
+    Friend WithEvents txtCodigoVenta As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents dgvGastosAdicionales As DataGridView
+    Friend WithEvents btnLimpiarCampos As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents btnBuscarCliente As Button
+    Friend WithEvents btnBuscarVent As Button
+    Friend WithEvents btnCerrar As Button
 End Class

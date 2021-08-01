@@ -1,106 +1,91 @@
 ﻿Imports System.Data.SqlClient
-
 Public Class frmProductos
-    Private Sub frmBuscarPais_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        dgvUpdate()
+    Private funciones As New clsFuncionesGenerales()
+    Private productos As New clsProductos()
+
+    Private editar As Boolean = False
+    Private Sub frmProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        funciones.llenarDataGrid(dgvProductos, queriesProductos("obtener_todos"))
+        dgvProductos.Columns("ProductoId").Visible = False
     End Sub
-    Private Sub dgvUpdate()
-        Try
-            Conectar()
-            Dim paises As New DataTable
-            Using adaptador As New SqlDataAdapter("select * from Productos", coneccion)
-                adaptador.Fill(paises)
-            End Using
-
-            dgvProductos.DataSource = paises
-            CerrarConeccion()
-        Catch ex As Exception
-            MessageBox.Show("Ha ocurrido un error en la coneccion a la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-
-
-    End Sub
-
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscarProducto.Click
-        Dim consulta As String
-        consulta = txtParametro.Text
-        Try
-            Conectar()
-            consulta = "SELECT *FROM Productos WHERE NombreProducto='" & consulta & "'"
-            Dim paises As New DataTable
-
-            Using adaptador As New SqlDataAdapter(consulta, coneccion)
-                adaptador.Fill(paises)
-            End Using
-
-            dgvProductos.DataSource = paises
-            CerrarConeccion()
-
-        Catch ex As Exception
-            MessageBox.Show("Ha ocurrido un error en la coneccion con la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-
-    Private Sub txtParametro_TextChanged(sender As Object, e As EventArgs) Handles txtParametro.TextChanged
-
-    End Sub
-
-    Private Sub dgvPaises_DoubleClick(sender As Object, e As EventArgs) Handles dgvProductos.DoubleClick
-        Try
-            frmGastosAdicionales.TxtProducto.Text = dgvProductos.CurrentRow.Cells(1).Value
-            frmGastosAdicionales.idProducto = dgvProductos.CurrentRow.Cells(0).Value
-            frmGastosAdicionales.precioProducto = dgvProductos.CurrentRow.Cells(2).Value
-            frmGastosAdicionales.txtPrecio.Text = dgvProductos.CurrentRow.Cells(2).Value
-        Catch ex As Exception
-
-        End Try
-
-
-        Me.Close()
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-
-    Private Sub dgvPaises_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProductos.CellContentClick
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If txtProducto.Text.Length = 0 Or txtPrecio.Text = 0 Then
-            MessageBox.Show("No puede dejar campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Else
-            Try
-                Conectar()
-
-                Dim sql = "INSERT INTO Productos(NombreProducto, Precio) VALUES(@NombreProducto, @Precio)"
-                Dim actualizar As New SqlCommand(sql, coneccion)
-
-                actualizar.Parameters.AddWithValue("@NombreProducto", txtProducto.Text)
-                actualizar.Parameters.AddWithValue("@Precio", Val(txtPrecio.Text))
-
-                actualizar.ExecuteNonQuery()
-                CerrarConeccion()
-
-                txtPrecio.Clear()
-                txtProducto.Clear()
-
-                dgvUpdate()
-                MessageBox.Show("Registro realizado con éxito", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Catch ex As Exception
-                MessageBox.Show("Ocurrio un error en la conección a la base de datos" & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-
-
-        End If
-    End Sub
-
-    Private Sub txtProducto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtProducto.KeyPress
+    Private Sub txtProducto_KeyPress(sender As Object, e As KeyPressEventArgs)
         soloLetras(e)
     End Sub
 
-    Private Sub txtPrecio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecio.KeyPress
+    Private Sub txtPrecio_KeyPress(sender As Object, e As KeyPressEventArgs)
         soloNumeros(e)
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim textBoxes As New List(Of TextBox) From {txtNombre, txtPrecio}
+
+        Dim validar = validarTextBoxVacios(textBoxes)
+
+        If (Not validar(0)) Then
+            MsgCampoVacio(validar(1))
+        Else
+            productos._nombreProducto = txtNombre.Text
+            productos._precio = val(txtPrecio.Text)
+            productos._estado = chkEstado.Checked
+
+            If editar = True Then
+                productos._productoId = txtCodigo.Text
+
+                Dim res = productos.actualizar()
+
+                If Not res(0) Then
+                    MsgError(res(1))
+                Else
+                    MsgActualizacionExitosa()
+                    limpiarCampos()
+                End If
+
+            Else
+                Dim res = productos.insertar()
+
+                If Not res(0) Then
+                    MsgError(res(1))
+                Else
+                    MsgRegistroExitoso()
+                    limpiarCampos()
+                End If
+            End If
+            funciones.llenarDataGrid(dgvProductos, queriesProductos("obtener_todos"))
+        End If
+
+    End Sub
+
+    Private Sub limpiarCampos()
+        txtCodigo.Clear()
+        txtNombre.Clear()
+        txtPrecio.Clear()
+        chkEstado.Checked = False
+        editar = False
+    End Sub
+
+    Private Sub dgvProductos_DoubleClick(sender As Object, e As EventArgs) Handles dgvProductos.DoubleClick
+        txtCodigo.Text = dgvProductos.CurrentRow.Cells(0).Value
+        txtNombre.Text = dgvProductos.CurrentRow.Cells(1).Value
+        txtPrecio.Text = dgvProductos.CurrentRow.Cells(2).Value
+        chkEstado.Checked = dgvProductos.CurrentRow.Cells(3).Value
+        editar = True
+    End Sub
+
+    Private Sub btnLimpiarCampos_Click(sender As Object, e As EventArgs) Handles btnLimpiarCampos.Click
+        limpiarCampos()
+        funciones.llenarDataGrid(dgvProductos, queriesProductos("obtener_todos"))
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        If txtBuscar.Text = "" Then
+            MsgError2("Ingrese el nombre del producto", "Campo vacío")
+        Else
+            productos._nombreProducto = txtBuscar.Text
+            productos.obtenerProducto(dgvProductos, queriesProductos("obtener_producto"))
+        End If
     End Sub
 End Class

@@ -1,9 +1,13 @@
 ﻿Public Class frmAsignarHabitaciones
     Private funciones As New clsFuncionesGenerales()
 
-    Dim habitaciones As New Dictionary(Of Integer, Integer)
+    Public habitaciones As New Dictionary(Of Integer, Integer)
     Private Sub frmAsignarHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         funciones.llenarDataGrid(dgvHabitacionesDisponibles, queriesHabitaciones("obtener_disponibles"))
+
+        For Each habitacion In habitaciones
+            dgvHabitacionesAsignadas.Rows.Add(habitacion.Key, habitacion.Value)
+        Next
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
@@ -45,6 +49,7 @@
         If (dgvHabitacionesAsignadas.SelectedCells.Count > 0) Then
             frmNuevaVenta.habitaciones = habitaciones
             frmNuevaVenta.actualizarVentaHabitaciones()
+            frmNuevaVenta.actualizarVentaTotal()
             Me.Close()
         Else
             MsgError2("Seleccione al menos una habitación", "Seleccione una habitación")

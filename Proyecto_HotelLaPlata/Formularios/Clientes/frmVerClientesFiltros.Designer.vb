@@ -29,10 +29,10 @@ Partial Class frmVerClientesFiltros
         Me.Label10 = New System.Windows.Forms.Label()
         Me.dgvClientes = New System.Windows.Forms.DataGridView()
         Me.btnBuscarCliente = New System.Windows.Forms.Button()
-        Me.btnRecargar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.btnLimpiarCampos = New System.Windows.Forms.Button()
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -57,6 +57,7 @@ Partial Class frmVerClientesFiltros
         '
         'dgvClientes
         '
+        Me.dgvClientes.AllowUserToAddRows = False
         Me.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -111,24 +112,6 @@ Partial Class frmVerClientesFiltros
         Me.btnBuscarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBuscarCliente.UseVisualStyleBackColor = False
         '
-        'btnRecargar
-        '
-        Me.btnRecargar.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.btnRecargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRecargar.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRecargar.ForeColor = System.Drawing.Color.GhostWhite
-        Me.btnRecargar.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Sync_icon
-        Me.btnRecargar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnRecargar.Location = New System.Drawing.Point(549, 700)
-        Me.btnRecargar.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnRecargar.Name = "btnRecargar"
-        Me.btnRecargar.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
-        Me.btnRecargar.Size = New System.Drawing.Size(298, 48)
-        Me.btnRecargar.TabIndex = 137
-        Me.btnRecargar.Text = "Recargar"
-        Me.btnRecargar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRecargar.UseVisualStyleBackColor = False
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -164,16 +147,34 @@ Partial Class frmVerClientesFiltros
         Me.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
+        'btnLimpiarCampos
+        '
+        Me.btnLimpiarCampos.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.btnLimpiarCampos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.btnLimpiarCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLimpiarCampos.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLimpiarCampos.ForeColor = System.Drawing.Color.AliceBlue
+        Me.btnLimpiarCampos.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Clear_Symbol_icon_2
+        Me.btnLimpiarCampos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnLimpiarCampos.Location = New System.Drawing.Point(30, 291)
+        Me.btnLimpiarCampos.Name = "btnLimpiarCampos"
+        Me.btnLimpiarCampos.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
+        Me.btnLimpiarCampos.Size = New System.Drawing.Size(298, 48)
+        Me.btnLimpiarCampos.TabIndex = 148
+        Me.btnLimpiarCampos.Text = "Limpiar"
+        Me.btnLimpiarCampos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLimpiarCampos.UseVisualStyleBackColor = False
+        '
         'frmVerClientesFiltros
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1077, 852)
+        Me.Controls.Add(Me.btnLimpiarCampos)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.btnRecargar)
         Me.Controls.Add(Me.btnBuscarCliente)
         Me.Controls.Add(Me.dgvClientes)
         Me.Controls.Add(Me.Label10)
@@ -192,8 +193,8 @@ Partial Class frmVerClientesFiltros
     Friend WithEvents Label10 As Label
     Friend WithEvents dgvClientes As DataGridView
     Friend WithEvents btnBuscarCliente As Button
-    Friend WithEvents btnRecargar As Button
     Private WithEvents Label2 As Label
     Private WithEvents Label1 As Label
     Friend WithEvents btnCerrar As Button
+    Friend WithEvents btnLimpiarCampos As Button
 End Class

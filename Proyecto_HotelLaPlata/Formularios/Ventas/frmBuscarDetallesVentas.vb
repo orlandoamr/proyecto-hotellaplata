@@ -123,7 +123,7 @@ Public Class frmBuscarDetallesVentas
 
     Private Sub dgvDetalleVentas_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDetalleVentas.CellDoubleClick
         Try
-            frmGastosAdicionales.TxtCodigoDetalleVenta.Text = dgvDetalleVentas.CurrentRow.Cells(0).Value
+            frmGastosAdicionales.txtCodigoVenta.Text = dgvDetalleVentas.CurrentRow.Cells(0).Value
         Catch ex As Exception
 
         End Try

@@ -22,9 +22,9 @@ Partial Class frmNuevaVenta
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvVentas = New System.Windows.Forms.DataGridView()
         Me.txtBuscarCliente = New System.Windows.Forms.TextBox()
@@ -42,17 +42,17 @@ Partial Class frmNuevaVenta
         Me.lbServicios = New System.Windows.Forms.ListBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtTotalVenta = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtEstadia = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.btnAgregarServicios = New System.Windows.Forms.Button()
         Me.btnAgregarHabitaciones = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnLimpiarCampos = New System.Windows.Forms.Button()
-        Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnRecargar = New System.Windows.Forms.Button()
         Me.btnBuscarCliente = New System.Windows.Forms.Button()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -71,35 +71,35 @@ Partial Class frmNuevaVenta
         Me.dgvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(151, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvVentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(151, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvVentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvVentas.ColumnHeadersHeight = 35
         Me.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvVentas.EnableHeadersVisualStyles = False
         Me.dgvVentas.Location = New System.Drawing.Point(374, 142)
         Me.dgvVentas.Name = "dgvVentas"
         Me.dgvVentas.ReadOnly = True
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvVentas.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvVentas.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvVentas.RowHeadersWidth = 51
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvVentas.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvVentas.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvVentas.RowTemplate.Height = 24
         Me.dgvVentas.Size = New System.Drawing.Size(686, 587)
         Me.dgvVentas.TabIndex = 127
@@ -167,7 +167,7 @@ Partial Class frmNuevaVenta
         Me.txtCodigoVenta.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCodigoVenta.MaxLength = 16
         Me.txtCodigoVenta.Name = "txtCodigoVenta"
-        Me.txtCodigoVenta.Size = New System.Drawing.Size(268, 25)
+        Me.txtCodigoVenta.Size = New System.Drawing.Size(299, 25)
         Me.txtCodigoVenta.TabIndex = 107
         '
         'Label2
@@ -191,29 +191,31 @@ Partial Class frmNuevaVenta
         Me.txtCodigoCliente.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCodigoCliente.MaxLength = 16
         Me.txtCodigoCliente.Name = "txtCodigoCliente"
-        Me.txtCodigoCliente.Size = New System.Drawing.Size(223, 25)
+        Me.txtCodigoCliente.Size = New System.Drawing.Size(251, 25)
         Me.txtCodigoCliente.TabIndex = 105
         '
         'dtpFechaEntrada
         '
         Me.dtpFechaEntrada.Location = New System.Drawing.Point(31, 207)
         Me.dtpFechaEntrada.Name = "dtpFechaEntrada"
-        Me.dtpFechaEntrada.Size = New System.Drawing.Size(267, 20)
+        Me.dtpFechaEntrada.Size = New System.Drawing.Size(298, 20)
         Me.dtpFechaEntrada.TabIndex = 130
         '
         'lbHabitacionesAsignadas
         '
+        Me.lbHabitacionesAsignadas.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbHabitacionesAsignadas.FormattingEnabled = True
-        Me.lbHabitacionesAsignadas.Location = New System.Drawing.Point(30, 278)
+        Me.lbHabitacionesAsignadas.ItemHeight = 16
+        Me.lbHabitacionesAsignadas.Location = New System.Drawing.Point(29, 279)
         Me.lbHabitacionesAsignadas.Name = "lbHabitacionesAsignadas"
-        Me.lbHabitacionesAsignadas.Size = New System.Drawing.Size(220, 95)
+        Me.lbHabitacionesAsignadas.Size = New System.Drawing.Size(253, 100)
         Me.lbHabitacionesAsignadas.TabIndex = 131
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(26, 255)
+        Me.Label5.Location = New System.Drawing.Point(26, 256)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(183, 20)
@@ -224,7 +226,7 @@ Partial Class frmNuevaVenta
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(28, 399)
+        Me.Label8.Location = New System.Drawing.Point(24, 400)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(140, 20)
@@ -233,17 +235,19 @@ Partial Class frmNuevaVenta
         '
         'lbServicios
         '
+        Me.lbServicios.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbServicios.FormattingEnabled = True
-        Me.lbServicios.Location = New System.Drawing.Point(33, 422)
+        Me.lbServicios.ItemHeight = 16
+        Me.lbServicios.Location = New System.Drawing.Point(29, 423)
         Me.lbServicios.Name = "lbServicios"
-        Me.lbServicios.Size = New System.Drawing.Size(220, 95)
+        Me.lbServicios.Size = New System.Drawing.Size(252, 100)
         Me.lbServicios.TabIndex = 134
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(29, 537)
+        Me.Label11.Location = New System.Drawing.Point(27, 631)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(131, 20)
@@ -256,12 +260,46 @@ Partial Class frmNuevaVenta
         Me.txtTotalVenta.AccessibleName = "apellido"
         Me.txtTotalVenta.Enabled = False
         Me.txtTotalVenta.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotalVenta.Location = New System.Drawing.Point(57, 560)
+        Me.txtTotalVenta.Location = New System.Drawing.Point(55, 654)
         Me.txtTotalVenta.Margin = New System.Windows.Forms.Padding(2)
         Me.txtTotalVenta.MaxLength = 16
         Me.txtTotalVenta.Name = "txtTotalVenta"
-        Me.txtTotalVenta.Size = New System.Drawing.Size(243, 31)
+        Me.txtTotalVenta.Size = New System.Drawing.Size(274, 31)
         Me.txtTotalVenta.TabIndex = 137
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(27, 657)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(24, 22)
+        Me.Label6.TabIndex = 139
+        Me.Label6.Text = "L."
+        '
+        'txtEstadia
+        '
+        Me.txtEstadia.AcceptsTab = True
+        Me.txtEstadia.AccessibleName = "días de estadía"
+        Me.txtEstadia.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEstadia.Location = New System.Drawing.Point(29, 575)
+        Me.txtEstadia.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtEstadia.MaxLength = 2
+        Me.txtEstadia.Name = "txtEstadia"
+        Me.txtEstadia.Size = New System.Drawing.Size(300, 25)
+        Me.txtEstadia.TabIndex = 140
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(27, 553)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(121, 20)
+        Me.Label7.TabIndex = 141
+        Me.Label7.Text = "Dias de estadía"
         '
         'btnAgregarServicios
         '
@@ -270,7 +308,7 @@ Partial Class frmNuevaVenta
         Me.btnAgregarServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregarServicios.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregarServicios.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Plus_icon_3
-        Me.btnAgregarServicios.Location = New System.Drawing.Point(258, 422)
+        Me.btnAgregarServicios.Location = New System.Drawing.Point(287, 423)
         Me.btnAgregarServicios.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAgregarServicios.Name = "btnAgregarServicios"
         Me.btnAgregarServicios.Size = New System.Drawing.Size(42, 41)
@@ -284,7 +322,7 @@ Partial Class frmNuevaVenta
         Me.btnAgregarHabitaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregarHabitaciones.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregarHabitaciones.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Plus_icon_3
-        Me.btnAgregarHabitaciones.Location = New System.Drawing.Point(258, 278)
+        Me.btnAgregarHabitaciones.Location = New System.Drawing.Point(287, 279)
         Me.btnAgregarHabitaciones.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAgregarHabitaciones.Name = "btnAgregarHabitaciones"
         Me.btnAgregarHabitaciones.Size = New System.Drawing.Size(42, 41)
@@ -315,7 +353,7 @@ Partial Class frmNuevaVenta
         Me.btnLimpiarCampos.ForeColor = System.Drawing.Color.AliceBlue
         Me.btnLimpiarCampos.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Clear_Symbol_icon_2
         Me.btnLimpiarCampos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnLimpiarCampos.Location = New System.Drawing.Point(32, 790)
+        Me.btnLimpiarCampos.Location = New System.Drawing.Point(31, 780)
         Me.btnLimpiarCampos.Name = "btnLimpiarCampos"
         Me.btnLimpiarCampos.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
         Me.btnLimpiarCampos.Size = New System.Drawing.Size(298, 48)
@@ -323,42 +361,6 @@ Partial Class frmNuevaVenta
         Me.btnLimpiarCampos.Text = "Limpiar"
         Me.btnLimpiarCampos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLimpiarCampos.UseVisualStyleBackColor = False
-        '
-        'btnEliminar
-        '
-        Me.btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminar.ForeColor = System.Drawing.Color.AliceBlue
-        Me.btnEliminar.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Delete_Bin_icon
-        Me.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnEliminar.Location = New System.Drawing.Point(32, 735)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
-        Me.btnEliminar.Size = New System.Drawing.Size(298, 48)
-        Me.btnEliminar.TabIndex = 125
-        Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnEliminar.UseVisualStyleBackColor = False
-        '
-        'btnNuevo
-        '
-        Me.btnNuevo.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNuevo.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNuevo.ForeColor = System.Drawing.Color.GhostWhite
-        Me.btnNuevo.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Plus_icon
-        Me.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnNuevo.Location = New System.Drawing.Point(32, 681)
-        Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
-        Me.btnNuevo.Size = New System.Drawing.Size(298, 48)
-        Me.btnNuevo.TabIndex = 124
-        Me.btnNuevo.Text = "Nuevo"
-        Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNuevo.UseVisualStyleBackColor = False
         '
         'btnGuardar
         '
@@ -369,7 +371,7 @@ Partial Class frmNuevaVenta
         Me.btnGuardar.ForeColor = System.Drawing.Color.GhostWhite
         Me.btnGuardar.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Save_icon
         Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnGuardar.Location = New System.Drawing.Point(32, 626)
+        Me.btnGuardar.Location = New System.Drawing.Point(31, 726)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
         Me.btnGuardar.Size = New System.Drawing.Size(298, 48)
@@ -386,7 +388,7 @@ Partial Class frmNuevaVenta
         Me.btnRecargar.ForeColor = System.Drawing.Color.GhostWhite
         Me.btnRecargar.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Sync_icon
         Me.btnRecargar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnRecargar.Location = New System.Drawing.Point(564, 790)
+        Me.btnRecargar.Location = New System.Drawing.Point(565, 770)
         Me.btnRecargar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRecargar.Name = "btnRecargar"
         Me.btnRecargar.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
@@ -403,7 +405,7 @@ Partial Class frmNuevaVenta
         Me.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscarCliente.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscarCliente.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Search_icon1
-        Me.btnBuscarCliente.Location = New System.Drawing.Point(258, 134)
+        Me.btnBuscarCliente.Location = New System.Drawing.Point(287, 134)
         Me.btnBuscarCliente.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscarCliente.Name = "btnBuscarCliente"
         Me.btnBuscarCliente.Size = New System.Drawing.Size(42, 41)
@@ -428,22 +430,14 @@ Partial Class frmNuevaVenta
         Me.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(29, 563)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(24, 22)
-        Me.Label6.TabIndex = 139
-        Me.Label6.Text = "L."
-        '
         'frmNuevaVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1077, 852)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.txtEstadia)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txtTotalVenta)
@@ -458,8 +452,6 @@ Partial Class frmNuevaVenta
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgvVentas)
         Me.Controls.Add(Me.btnLimpiarCampos)
-        Me.Controls.Add(Me.btnEliminar)
-        Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnRecargar)
         Me.Controls.Add(Me.txtBuscarCliente)
@@ -486,8 +478,6 @@ Partial Class frmNuevaVenta
     Private WithEvents Label1 As Label
     Friend WithEvents dgvVentas As DataGridView
     Friend WithEvents btnLimpiarCampos As Button
-    Friend WithEvents btnEliminar As Button
-    Friend WithEvents btnNuevo As Button
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnRecargar As Button
     Friend WithEvents txtBuscarCliente As TextBox
@@ -510,4 +500,6 @@ Partial Class frmNuevaVenta
     Friend WithEvents Label11 As Label
     Friend WithEvents txtTotalVenta As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents txtEstadia As TextBox
+    Friend WithEvents Label7 As Label
 End Class
