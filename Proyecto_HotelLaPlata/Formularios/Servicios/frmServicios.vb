@@ -6,6 +6,7 @@
     Private editar As Boolean = False
     Private Sub frmServicios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         funciones.llenarDataGrid(dgvServicios, queriesServicios("obtener"))
+        dgvServicios.Columns("ServicioId").Visible = False
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -37,8 +38,6 @@
             End If
         End If
 
-        funciones.llenarDataGrid(dgvServicios, queriesServicios("obtener"))
-
     End Sub
 
     Private Sub limpiarCampos()
@@ -46,7 +45,7 @@
         txtDescripcion.Clear()
         txtPrecio.Clear()
         chkEstado.Checked = False
-
+        funciones.llenarDataGrid(dgvServicios, queriesServicios("obtener"))
         editar = False
     End Sub
 
@@ -59,25 +58,16 @@
         editar = True
     End Sub
 
-    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+    Private Sub btnLimpiarCampos_Click(sender As Object, e As EventArgs) Handles btnLimpiarCampos.Click
         limpiarCampos()
+        funciones.llenarDataGrid(dgvServicios, queriesServicios("obtener"))
     End Sub
 
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        servicios._servicioId = Val(txtCodigo.Text)
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
+    End Sub
 
-        Dim res = servicios.eliminar(queriesServicios("eliminar"))
-
-        If res(0) = False Then
-            MsgError(res(1))
-
-        Else
-            MsgEliminacionExitosa()
-            limpiarCampos()
-            funciones.llenarDataGrid(dgvServicios, queriesServicios("obtener"))
-        End If
-
-
-
+    Private Sub txtPrecio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecio.KeyPress
+        soloNumeros(e)
     End Sub
 End Class

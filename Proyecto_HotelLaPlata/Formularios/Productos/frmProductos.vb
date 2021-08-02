@@ -80,12 +80,11 @@ Public Class frmProductos
         Me.Close()
     End Sub
 
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        If txtBuscar.Text = "" Then
-            MsgError2("Ingrese el nombre del producto", "Campo vacío")
-        Else
-            productos._nombreProducto = txtBuscar.Text
-            productos.obtenerProducto(dgvProductos, queriesProductos("obtener_producto"))
-        End If
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub txtPrecio_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txtPrecio.KeyPress
+        soloNumeros(e)
     End Sub
 End Class

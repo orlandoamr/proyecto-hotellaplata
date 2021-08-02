@@ -17,6 +17,7 @@
             Dim costoHabitacion = dgvHabitacionesDisponibles.Rows(indice).Cells(1).Value
 
             Dim todoBien As Boolean = True
+
             For Each id In habitaciones
                 If id.Key = numHabitacion Then
                     todoBien = False

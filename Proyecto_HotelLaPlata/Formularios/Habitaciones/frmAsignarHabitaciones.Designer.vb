@@ -251,6 +251,7 @@ Partial Class frmAsignarHabitaciones
         Me.Controls.Add(Me.dgvHabitacionesAsignadas)
         Me.Controls.Add(Me.dgvHabitacionesDisponibles)
         Me.Name = "frmAsignarHabitaciones"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmAsignarHabitaciones"
         CType(Me.dgvHabitacionesDisponibles, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvHabitacionesAsignadas, System.ComponentModel.ISupportInitialize).EndInit()

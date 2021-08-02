@@ -39,7 +39,7 @@ Partial Class frmVerClientesFiltros
         'txtParametro
         '
         Me.txtParametro.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtParametro.Location = New System.Drawing.Point(30, 180)
+        Me.txtParametro.Location = New System.Drawing.Point(30, 165)
         Me.txtParametro.Name = "txtParametro"
         Me.txtParametro.Size = New System.Drawing.Size(299, 26)
         Me.txtParametro.TabIndex = 46
@@ -48,7 +48,7 @@ Partial Class frmVerClientesFiltros
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(459, 9)
+        Me.Label10.Location = New System.Drawing.Point(457, 9)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(120, 23)
@@ -91,7 +91,7 @@ Partial Class frmVerClientesFiltros
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.dgvClientes.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvClientes.RowTemplate.Height = 24
-        Me.dgvClientes.Size = New System.Drawing.Size(686, 532)
+        Me.dgvClientes.Size = New System.Drawing.Size(686, 658)
         Me.dgvClientes.TabIndex = 135
         '
         'btnBuscarCliente
@@ -102,7 +102,7 @@ Partial Class frmVerClientesFiltros
         Me.btnBuscarCliente.ForeColor = System.Drawing.Color.GhostWhite
         Me.btnBuscarCliente.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Search_icon1
         Me.btnBuscarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnBuscarCliente.Location = New System.Drawing.Point(30, 238)
+        Me.btnBuscarCliente.Location = New System.Drawing.Point(30, 223)
         Me.btnBuscarCliente.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscarCliente.Name = "btnBuscarCliente"
         Me.btnBuscarCliente.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
@@ -126,7 +126,7 @@ Partial Class frmVerClientesFiltros
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(26, 157)
+        Me.Label1.Location = New System.Drawing.Point(26, 142)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(270, 20)
         Me.Label1.TabIndex = 139
@@ -139,7 +139,7 @@ Partial Class frmVerClientesFiltros
         Me.btnCerrar.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCerrar.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Delete_icon
         Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnCerrar.Location = New System.Drawing.Point(12, 7)
+        Me.btnCerrar.Location = New System.Drawing.Point(17, 14)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.btnCerrar.Size = New System.Drawing.Size(45, 42)
@@ -156,7 +156,7 @@ Partial Class frmVerClientesFiltros
         Me.btnLimpiarCampos.ForeColor = System.Drawing.Color.AliceBlue
         Me.btnLimpiarCampos.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Clear_Symbol_icon_2
         Me.btnLimpiarCampos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnLimpiarCampos.Location = New System.Drawing.Point(30, 291)
+        Me.btnLimpiarCampos.Location = New System.Drawing.Point(30, 276)
         Me.btnLimpiarCampos.Name = "btnLimpiarCampos"
         Me.btnLimpiarCampos.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
         Me.btnLimpiarCampos.Size = New System.Drawing.Size(298, 48)

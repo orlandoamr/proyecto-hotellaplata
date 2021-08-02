@@ -1,37 +1,39 @@
 ﻿'Clase utilizada para insertar, actualizar, buscar y eliminar gastos adicionales
 Imports System.Data.SqlClient
 Public Class clsGastosAdicionales
+    Inherits clsEjecutarQuery
+
     'Propiedades
-    Private idGastoAdicional As Integer
-    Private idDetalleVenta As Integer
-    Private idProducto As Integer
+    Private gastoId As Integer
+    Private ventaId As Integer
+    Private productoId As Integer
     Private cantidadProducto As Integer
     Private precioProducto As Integer
     Private totalGasto As Integer
 
     'Getters y Setters
-    Public Property _idGastoAdicional As Integer
+    Public Property _gastoId As Integer
         Get
-            Return idGastoAdicional
+            Return gastoId
         End Get
         Set(value As Integer)
-            idGastoAdicional = value
+            gastoId = value
         End Set
     End Property
-    Public Property _idDetalleVenta As Integer
+    Public Property _ventaId As Integer
         Get
-            Return idDetalleVenta
+            Return ventaId
         End Get
         Set(value As Integer)
-            idDetalleVenta = value
+            ventaId = value
         End Set
     End Property
-    Public Property _idProducto As Integer
+    Public Property _productoId As Integer
         Get
-            Return idProducto
+            Return productoId
         End Get
         Set(value As Integer)
-            idProducto = value
+            productoId = value
         End Set
     End Property
     Public Property _cantidadProducto As Integer
@@ -59,59 +61,25 @@ Public Class clsGastosAdicionales
         End Set
     End Property
 
-    'Método para obtener el gasto adicional por su id
-    Public Sub obtenerGasto(dgv As DataGridView, query As String, con As SqlConnection, id As Integer)
-        query = query & "'" & id & "'"
-        Dim gastos As New DataTable
 
-        Using adaptador As New SqlClient.SqlDataAdapter(query, con)
-            adaptador.Fill(gastos)
-        End Using
+    'Método para insertar un gasto adicional
+    Public Function insertar()
+        Dim parametros As New List(Of SqlParameter) From {
+             New SqlParameter("@FKVentaId", ventaId),
+             New SqlParameter("@FKProductoId", productoId),
+             New SqlParameter("@Cantidad", cantidadProducto),
+             New SqlParameter("@TotalGasto", totalGasto)
+        }
 
-        dgv.DataSource = gastos
-    End Sub
+        Return ejecutar(queriesGastos("insertar_gasto"), parametros)
+    End Function
 
-    Public Sub insertarGasto(query As String, con As SqlConnection)
-        Dim ejecutar As New SqlCommand(query, coneccion)
-        ejecutar.Parameters.AddWithValue("@FkDetalleVenta", idDetalleVenta)
-        ejecutar.Parameters.AddWithValue("@FkProductoId", idProducto)
-        ejecutar.Parameters.AddWithValue("@Cantidad", cantidadProducto)
-        ejecutar.Parameters.AddWithValue("@Total", totalGasto)
+    Public Sub obtenerGastos(dgv As DataGridView)
+        Dim parametros As New List(Of SqlParameter) From {
+             New SqlParameter("@VentaId", ventaId)
+        }
 
-        Try
-            ejecutar.ExecuteNonQuery()
-            MsgRegistroExitoso()
-        Catch ex As Exception
-            MsgErrorRegistro(ex.Message)
-        End Try
-    End Sub
-
-    Public Sub actualizarGasto(query As String, con As SqlConnection)
-        Dim ejecutar As New SqlCommand(query, coneccion)
-        ejecutar.Parameters.AddWithValue("@FkGastoAdicionalId", idGastoAdicional)
-        ejecutar.Parameters.AddWithValue("@FkDetalleVenta", idDetalleVenta)
-        ejecutar.Parameters.AddWithValue("@FkProductoId", idProducto)
-        ejecutar.Parameters.AddWithValue("@Cantidad", cantidadProducto)
-        ejecutar.Parameters.AddWithValue("@Total", totalGasto)
-
-        Try
-            ejecutar.ExecuteNonQuery()
-            MsgActualizacionExitosa()
-        Catch ex As Exception
-            MsgErrorRegistro(ex.Message)
-        End Try
-    End Sub
-
-    Public Sub eliminarGasto(query As String, con As SqlConnection)
-        Dim ejecutar As New SqlCommand(query, coneccion)
-        ejecutar.Parameters.AddWithValue("@FkGastoAdicionalId", idGastoAdicional)
-
-        Try
-            ejecutar.ExecuteNonQuery()
-            MsgEliminacionExitosa()
-        Catch ex As Exception
-            MsgErrorRegistro(ex.Message)
-        End Try
+        dgv.DataSource = obtener(queriesGastos("obtener_gastos_venta"), parametros)
     End Sub
 
 End Class

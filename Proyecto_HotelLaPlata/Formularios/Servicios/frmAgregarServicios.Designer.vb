@@ -259,6 +259,7 @@ Partial Class frmAgregarServicios
         Me.Controls.Add(Me.dgvServiciosAsignados)
         Me.Controls.Add(Me.dgvServiciosDisponibles)
         Me.Name = "frmAgregarServicios"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmAgregarServicios"
         CType(Me.dgvServiciosAsignados, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvServiciosDisponibles, System.ComponentModel.ISupportInitialize).EndInit()

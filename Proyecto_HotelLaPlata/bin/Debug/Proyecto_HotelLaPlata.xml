@@ -77,6 +77,11 @@ Proyecto_HotelLaPlata
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Proyecto_HotelLaPlata.My.Resources.Resources.Help_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Proyecto_HotelLaPlata.My.Resources.Resources.icons8_close_window_96px">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -93,6 +98,36 @@ Proyecto_HotelLaPlata
 </summary>
 </member>
 <member name="P:Proyecto_HotelLaPlata.My.Resources.Resources.icons8_search_48">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Proyecto_HotelLaPlata.My.Resources.Resources.La_Plata">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Proyecto_HotelLaPlata.My.Resources.Resources.La_Plata11">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Proyecto_HotelLaPlata.My.Resources.Resources.La_Plata12">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Proyecto_HotelLaPlata.My.Resources.Resources.La_Plata13">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Proyecto_HotelLaPlata.My.Resources.Resources.Logout_Rounded_Left_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Proyecto_HotelLaPlata.My.Resources.Resources.Logout_Rounded_Left_icon1">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

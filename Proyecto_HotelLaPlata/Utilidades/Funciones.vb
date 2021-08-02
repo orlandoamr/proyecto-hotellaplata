@@ -103,10 +103,9 @@ ExitFunction:
 
     Function validarTelefono(str As String) As Boolean
         Dim valido As Boolean = True
-        ' Dim str As String = TxtTelefono.Text
         Try
             Dim pDigito = Convert.ToInt32(Mid(str, 1, 1))
-            If pDigito = 8 Or pDigito = 9 Or pDigito = 3 Then
+            If pDigito = 8 Or pDigito = 9 Or pDigito = 3 Or pDigito = 2 Then
                 valido = True
             Else
                 valido = False

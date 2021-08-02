@@ -57,6 +57,13 @@
     Public Sub MsgIdDuplicado()
         MessageBox.Show("Ya existe un registro con con el ID ingresado", "ID Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
+    Public Sub MsgNumeroInvalido()
+        MessageBox.Show("El número de teléfono es inválido, debe tener 8 dígitos y empezar con 2,3,8,9", "Teléfono inválido", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    End Sub
+
+    Public Sub MsgCorreoInvalido()
+        MessageBox.Show("El correo electrónico es inválido, intente de nuevo", "Correo inválido", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    End Sub
 
     Public Sub MsgError(msg As String)
         MessageBox.Show("Ha ocurrido un error: " & msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

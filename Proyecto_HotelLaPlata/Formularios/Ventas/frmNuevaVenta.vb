@@ -1,7 +1,6 @@
 ﻿Public Class frmNuevaVenta
-    Public servicios As New Dictionary(Of String, Integer)
-    Public idServicios As New Dictionary(Of Integer, String)
     Public habitaciones As New Dictionary(Of Integer, Integer)
+    Public servicios As New Dictionary(Of Integer, Dictionary(Of String, Integer))
 
     Private funciones As New clsFuncionesGenerales()
     Private ventas As New clsVentas()
@@ -10,7 +9,8 @@
 
     Private Sub frmNuevaVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         funciones.llenarDataGrid(dgvVentas, queriesVentas("obtener"))
-
+        dgvVentas.Columns("VentaId").Visible = False
+        txtCodigoVenta.Text = ""
     End Sub
 
     Private Sub btnAgregarHabitaciones_Click(sender As Object, e As EventArgs) Handles btnAgregarHabitaciones.Click
@@ -20,7 +20,6 @@
     End Sub
 
     Private Sub btnAgregarServicios_Click(sender As Object, e As EventArgs) Handles btnAgregarServicios.Click
-        frmAgregarServicios.idServicios = idServicios
         frmAgregarServicios.servicios = servicios
         frmAgregarServicios.Show()
 
@@ -42,16 +41,20 @@
     Public Sub actualizarVentaServicios()
         lbServicios.Items.Clear()
 
-        For Each servicio In servicios
-            lbServicios.Items.Add(servicio.Key & ", Costo por día: L." & servicio.Value)
+        For Each id In servicios
+            For Each servicio In id.Value
+                lbServicios.Items.Add(servicio.Key & ", Costo por día: L." & servicio.Value)
+            Next
         Next
 
     End Sub
     Public Sub actualizarVentaTotal()
         Dim totalVenta As Integer = 0
 
-        For Each servicio In servicios
-            totalVenta += servicio.Value
+        For Each id In servicios
+            For Each ser In id.Value
+                totalVenta += ser.Value
+            Next
         Next
 
         For Each habitacion In habitaciones
@@ -100,9 +103,9 @@
                     ventas._habitacionId = habitacion.Key
                     ventas.insertarHabitaciones()
                 Next
-                For Each servicio In idServicios
+                For Each id In servicios
                     ventas._ventaId = idVenta
-                    ventas._servicioId = servicio.Key
+                    ventas._servicioId = id.Key
                     ventas.insertarServicios()
                 Next
 
@@ -117,10 +120,8 @@
         txtTotalVenta.Clear()
         txtCodigoCliente.Clear()
         txtCodigoVenta.Clear()
-        txtBuscarCliente.Clear()
         lbHabitacionesAsignadas.Items.Clear()
         lbServicios.Items.Clear()
-        idServicios.Clear()
         habitaciones.Clear()
         servicios.Clear()
     End Sub

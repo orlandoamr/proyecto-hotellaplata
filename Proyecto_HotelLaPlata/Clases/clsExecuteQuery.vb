@@ -38,7 +38,7 @@ Public Class clsEjecutarQuery
                     mensaje = "ya existe un registro con el id ingresado"
 
                 Case 547
-                    mensaje = "existen otros registros ligados a este id, no se puede eliminar"
+                    mensaje = "existen otros registros ligados a este id"
 
                 Case Else
                     mensaje = ex.Message & " " & ex.Number

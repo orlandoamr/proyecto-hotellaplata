@@ -30,8 +30,9 @@ Partial Class frmBuscarCliente
         Me.dgvVentas = New System.Windows.Forms.DataGridView()
         Me.txtParametro = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnBuscarCliente = New System.Windows.Forms.Button()
         Me.btnLimpiarCampos = New System.Windows.Forms.Button()
+        Me.btnBuscarCliente = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -49,7 +50,7 @@ Partial Class frmBuscarCliente
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(44, 41)
+        Me.Label2.Location = New System.Drawing.Point(44, 57)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(592, 20)
         Me.Label2.TabIndex = 144
@@ -112,24 +113,6 @@ Partial Class frmBuscarCliente
         Me.Label3.TabIndex = 146
         Me.Label3.Text = "Haga doble click en el registro de un cliente para copiarlo"
         '
-        'btnBuscarCliente
-        '
-        Me.btnBuscarCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarCliente.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarCliente.ForeColor = System.Drawing.Color.GhostWhite
-        Me.btnBuscarCliente.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Search_icon1
-        Me.btnBuscarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnBuscarCliente.Location = New System.Drawing.Point(48, 206)
-        Me.btnBuscarCliente.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnBuscarCliente.Name = "btnBuscarCliente"
-        Me.btnBuscarCliente.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
-        Me.btnBuscarCliente.Size = New System.Drawing.Size(299, 48)
-        Me.btnBuscarCliente.TabIndex = 142
-        Me.btnBuscarCliente.Text = "Buscar"
-        Me.btnBuscarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBuscarCliente.UseVisualStyleBackColor = False
-        '
         'btnLimpiarCampos
         '
         Me.btnLimpiarCampos.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
@@ -148,12 +131,42 @@ Partial Class frmBuscarCliente
         Me.btnLimpiarCampos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLimpiarCampos.UseVisualStyleBackColor = False
         '
+        'btnBuscarCliente
+        '
+        Me.btnBuscarCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarCliente.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarCliente.ForeColor = System.Drawing.Color.GhostWhite
+        Me.btnBuscarCliente.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Search_icon1
+        Me.btnBuscarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnBuscarCliente.Location = New System.Drawing.Point(48, 206)
+        Me.btnBuscarCliente.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnBuscarCliente.Name = "btnBuscarCliente"
+        Me.btnBuscarCliente.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
+        Me.btnBuscarCliente.Size = New System.Drawing.Size(299, 48)
+        Me.btnBuscarCliente.TabIndex = 142
+        Me.btnBuscarCliente.Text = "Buscar"
+        Me.btnBuscarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBuscarCliente.UseVisualStyleBackColor = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(493, 9)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(147, 23)
+        Me.Label10.TabIndex = 148
+        Me.Label10.Text = "Buscar clientes"
+        '
         'frmBuscarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1116, 571)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.btnLimpiarCampos)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
@@ -177,4 +190,5 @@ Partial Class frmBuscarCliente
     Friend WithEvents txtParametro As TextBox
     Private WithEvents Label3 As Label
     Friend WithEvents btnLimpiarCampos As Button
+    Friend WithEvents Label10 As Label
 End Class

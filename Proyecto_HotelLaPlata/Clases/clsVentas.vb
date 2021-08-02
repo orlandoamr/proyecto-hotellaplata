@@ -2,7 +2,7 @@
 '   Módulo: Clases
 '   Clase: clsVentas
 '   Función: insertar y buscar las ventas en la base de datos.
-'----------------------------------------------------------------------------------------------------------------
+'-----------------------------------------------------------------------------------------------------------------
 
 Imports System.Data.SqlClient
 Public Class clsVentas
@@ -127,6 +127,15 @@ Public Class clsVentas
         Return ejecutar(queriesHabitaciones("actualizar_estado"), parametros)
     End Function
 
+    'Método para actualizar la salida del cliente
+    Public Function actualizarSalida()
+        Dim parametros As New List(Of SqlParameter) From {
+            New SqlParameter("@VentaId", ventaId),
+            New SqlParameter("@FechaSalida", fechaSalida)
+       }
+        Return ejecutar(queriesVentas("actualizar_salida"), parametros)
+    End Function
+
     'Método para actualizar la disponibilidad de las habitaciones a disponible
     Public Function actualizarEstadoHabitaciones2()
         Dim parametros As New List(Of SqlParameter) From {
@@ -190,5 +199,20 @@ Public Class clsVentas
        }
         dgv.DataSource = obtener(queriesVentas("obtener_id"), parametros)
     End Sub
+
+    'Método para obtener el id de las habitaciones de una venta
+    Public Function obtenerIdHabitaciones()
+        Dim parametros As New List(Of SqlParameter) From {
+            New SqlParameter("@VentaId", ventaId)
+       }
+        Dim dt As New DataTable
+        dt = obtener(queriesVentas("obtener_habitaciones"), parametros)
+        Dim ids As New List(Of Integer)
+        For Each Row In dt.Rows
+            ids.Add(Row("Número de habitación"))
+        Next
+
+        Return ids
+    End Function
 
 End Class

@@ -3,6 +3,7 @@ Imports System.Data.SqlClient
 Public Class frmVerDetallesVentas
     Private funciones As New clsFuncionesGenerales()
     Private ventas As New clsVentas()
+    Private gastos As New clsGastosAdicionales()
 
     Private Sub txtCodigoVenta_TextChanged(sender As Object, e As EventArgs) Handles txtCodigoVenta.TextChanged
 
@@ -11,6 +12,8 @@ Public Class frmVerDetallesVentas
             ventas.obtenerHabitacines(dgvHabitaciones)
             ventas.obtenerServicios(dgvServicios)
             ventas.obtenerVentaId(dgvVenta)
+            gastos._ventaId = Val(txtCodigoVenta.Text)
+            gastos.obtenerGastos(dgvGastosAdicionales)
         End If
 
     End Sub
@@ -28,5 +31,6 @@ Public Class frmVerDetallesVentas
         dgvServicios.DataSource = Nothing
         dgvHabitaciones.DataSource = Nothing
         dgvVenta.DataSource = Nothing
+        dgvGastosAdicionales.DataSource = Nothing
     End Sub
 End Class
