@@ -21,4 +21,9 @@
         frmGastosAdicionales.txtPrecio.Text = dgvProducto.CurrentRow.Cells(2).Value
         Me.Close()
     End Sub
+
+    Private Sub btnLimpiarCampos_Click(sender As Object, e As EventArgs) Handles btnLimpiarCampos.Click
+        funciones.llenarDataGrid(dgvProducto, queriesProductos("obtener_activos"))
+        txtParametro.Clear()
+    End Sub
 End Class

@@ -1,21 +1,31 @@
-﻿Imports System.Data.SqlClient
-Imports System.Text.RegularExpressions
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios/Empleados
+'   Formulario: frmNuevoEmpleado
+'   Función: realizar registros de nuevos empleados y actualizar existentes
+'-----------------------------------------------------------------------------------------------------------------
 Public Class frmNuevoEmpleado
+    'Variables globales
+    Public cargoId As Integer 'Almacena el id del cargo
+    Private editar As Boolean = False 'Variable para identificar si el usuario está editando un registro
+
+    'Instancias de la clases de empleados, cargos y las funciones generales
     Private empleados As New clsEmpleados()
     Private funciones As New clsFuncionesGenerales()
     Public cargos As New clsCargos()
 
-    Public cargoId As Integer
-    Private editar As Boolean = False
-
+    'Evento que se ejecuta al cargar el formulario
     Private Sub frmNuevoEmpleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Se llena el grid y se ocultan los id para que no sean visibles por el usuario
         funciones.llenarDataGrid(dgvEmpleados, queriesEmpleados("obtener"))
         dgvEmpleados.Columns("FKCargoId").Visible = False
 
+        'Se cargan los registros de cargos as combobox
         cargos.obtenerCargos(cmbCargos)
         cmbCargos.SelectedIndex = 0
 
     End Sub
+
+    'Evento que se ejecuta al guardar un registro
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         'Se valida que no existan campos vacíos
         Dim textBoxes As New List(Of TextBox) From {txtNombre, txtApellido, txtIdentidad, txtCorreo, txtNumero}
@@ -25,12 +35,15 @@ Public Class frmNuevoEmpleado
         If Not val(0) Then
             MsgCampoVacio(val(1))
 
+            'Se valida el numéro de identidad
         ElseIf Not validarIdentidad(txtIdentidad.Text) Then
             MsgIdentidadInvalida()
 
+            'Se valida el numéro de teléfono
         ElseIf Not validarTelefono(txtNumero.Text) Or Not txtNumero.Text.Length = 8 Then
             MsgNumeroInvalido()
 
+            'Se valida el correo
         ElseIf Not ValidEmail(txtCorreo.Text) Then
             MsgCorreoInvalido()
 
@@ -66,13 +79,14 @@ Public Class frmNuevoEmpleado
 
                 Else
                     MsgActualizacionExitosa()
-                    LimpiarCampos()
+                    limpiarCampos()
                 End If
 
             End If
         End If
     End Sub
 
+    'Método para limpiar todos los campos de la pantalla 
     Private Sub limpiarCampos()
         txtIdentidad.Clear()
         txtNombre.Clear()
@@ -80,27 +94,35 @@ Public Class frmNuevoEmpleado
         txtCorreo.Clear()
         txtApellido.Clear()
         funciones.llenarDataGrid(dgvEmpleados, queriesEmpleados("obtener"))
+
+        'Se desactiva el modo edición
         editar = False
     End Sub
 
+    'Evento que se ejecuta al hacer doble click en una fila del datagrid
     Private Sub dgvEmpleados_DoubleClick(sender As Object, e As EventArgs) Handles dgvEmpleados.DoubleClick
+        'Se copian todos los elementos de la fila a los textbox
         txtNombre.Text = dgvEmpleados.CurrentRow.Cells(0).Value
         txtApellido.Text = dgvEmpleados.CurrentRow.Cells(1).Value
         txtIdentidad.Text = dgvEmpleados.CurrentRow.Cells(2).Value
         txtNumero.Text = dgvEmpleados.CurrentRow.Cells(3).Value
         txtCorreo.Text = dgvEmpleados.CurrentRow.Cells(4).Value
 
+        'Se activa el modo de edición
         editar = True
     End Sub
 
+    'Evento que se ejecuta al presionar el botón de limpiar
     Private Sub btnLimpiarCampos_Click(sender As Object, e As EventArgs) Handles btnLimpiarCampos.Click
         limpiarCampos()
     End Sub
 
+    'Evento que se ejecuta al presionar el botón de agregar cargo
     Private Sub btnBuscarCargo_Click(sender As Object, e As EventArgs) Handles btnBuscarCargo.Click
         frmCargos.Show()
     End Sub
 
+    'Evento que se ejecuta al presionar el botón de cerrar ventana
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub

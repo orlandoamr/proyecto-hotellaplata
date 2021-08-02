@@ -1,7 +1,14 @@
-﻿Imports System.Data.SqlClient
-Public Class clsDiarioEmpleados
-    Inherits clsEjecutarQuery
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Clases
+'   Clase: clsDiarioEmpleados
+'   Función: insertar los registros diarios de los empleados en la base de datos.
+'----------------------------------------------------------------------------------------------------------------
 
+Imports System.Data.SqlClient
+Public Class clsDiarioEmpleados 'Hereda de la clase principal que ejecuta los queries para usar los métodos
+    Inherits clsEjecutarQuery ' ejecutar y obtener
+
+    'Propiedades
     Private diarioId As Integer
     Private fecha As Date
     Private horaEntrada As String
@@ -9,6 +16,8 @@ Public Class clsDiarioEmpleados
     Private observacion As String
     Private empleadoId As String
 
+
+    'Getters y Setters
     Public Property _diarioId As Integer
         Get
             Return diarioId
@@ -58,6 +67,7 @@ Public Class clsDiarioEmpleados
         End Set
     End Property
 
+    'Método para insertar  un registro diario
     Public Function insertar()
         Dim parametros As New List(Of SqlParameter) From {
            New SqlParameter("@Fecha", fecha),
@@ -69,6 +79,7 @@ Public Class clsDiarioEmpleados
         Return ejecutar(queriesDiario("insertar"), parametros)
     End Function
 
+    'Método para actualizar la salida de un empleado en el registro diario
     Public Function actualizarSalida()
         Dim parametros As New List(Of SqlParameter) From {
            New SqlParameter("@HoraSalida", horaSalida),

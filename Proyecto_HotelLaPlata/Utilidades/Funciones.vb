@@ -1,7 +1,15 @@
 ﻿Module Funciones
     Public Sub soloLetras(e As KeyPressEventArgs)
         If Asc(e.KeyChar) <> 8 Then
-            If (Asc(e.KeyChar) < 64 Or Asc(e.KeyChar) > 92) And (Asc(e.KeyChar) < 97 Or Asc(e.KeyChar) > 122) Then
+            If (Asc(e.KeyChar) < 64 Or Asc(e.KeyChar) > 93) And (Asc(e.KeyChar) < 97 Or Asc(e.KeyChar) > 122) Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Public Sub soloLetrasyEspacios(e As KeyPressEventArgs)
+        If Asc(e.KeyChar) <> 8 Then
+            If (Asc(e.KeyChar) < 64 Or Asc(e.KeyChar) > 93) And (Asc(e.KeyChar) < 97 Or Asc(e.KeyChar) > 122) And ((Asc(e.KeyChar) < 31) Or (Asc(e.KeyChar) > 33)) Then
                 e.Handled = True
             End If
         End If

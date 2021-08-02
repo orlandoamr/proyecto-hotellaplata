@@ -186,6 +186,7 @@ Partial Class frmActualizarSalida
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1077, 852)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtCodigoVenta)

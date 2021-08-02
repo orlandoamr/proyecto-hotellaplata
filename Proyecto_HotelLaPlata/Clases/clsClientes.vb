@@ -3,7 +3,7 @@
 '   Clase: clsClientes
 '   Función: insertar, actualizar y buscar clientes en la base de datos.
 '----------------------------------------------------------------------------------------------------------------
-'
+
 Imports System.Data.SqlClient
 
 Public Class clsClientes

@@ -150,4 +150,5 @@
     Private Sub txtEstadia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEstadia.KeyPress
         soloNumeros(e)
     End Sub
+
 End Class

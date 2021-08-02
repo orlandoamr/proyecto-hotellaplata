@@ -133,6 +133,10 @@ Public Class clsVentas
             New SqlParameter("@VentaId", ventaId),
             New SqlParameter("@FechaSalida", fechaSalida)
        }
+        Dim parametros2 As New List(Of SqlParameter) From {
+            New SqlParameter("@VentaId", ventaId)
+        }
+        ejecutar(queriesHabitaciones("actualizar_detalle"), parametros2)
         Return ejecutar(queriesVentas("actualizar_salida"), parametros)
     End Function
 

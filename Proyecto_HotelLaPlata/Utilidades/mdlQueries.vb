@@ -119,6 +119,16 @@ Module mdl_Queries
                                ORDER BY Ventas.VentaId DESC"
         },
         {
+            "obtener_por_cliente", "SELECT Ventas.VentaId, Clientes.NombreCliente AS [Nombre del cliente], Clientes.ApellidoCliente AS [Apellido del cliente],Clientes.ClienteId AS [Identidad del cliente],Ventas.DiasEstadia as [Dias de estadía], Ventas.TotalVenta AS [Total de la venta(L)], Ventas.FechaEntrada AS [Fecha de entrada]   
+                        FROM    Ventas INNER JOIN
+                               Clientes ON Ventas.FkClienteId = Clientes.ClienteId
+                               WHERE Clientes.NombreCliente LIKE Concat('%', @Parametro, '%')
+                               OR Clientes.ApellidoCliente LIKE Concat('%', @Parametro, '%')
+                               OR Clientes.NombreCliente + ' ' + ApellidoCliente LIKE Concat('%', @Parametro, '%')
+                               OR Clientes.ClienteId LIKE Concat('%', @Parametro, '%')
+                               ORDER BY Ventas.VentaId DESC"
+        },
+        {
             "obtener_ventas_salida", "SELECT Ventas.VentaId, Clientes.NombreCliente AS [Nombre del cliente], Clientes.ApellidoCliente AS [Apellido del cliente],Clientes.ClienteId AS [Identidad del cliente],Ventas.DiasEstadia as [Dias de estadía], Ventas.TotalVenta AS [Total de la venta(L)], Ventas.FechaEntrada AS [Fecha de entrada]   
                                       FROM    Ventas INNER JOIN
                                               Clientes ON Ventas.FkClienteId = Clientes.ClienteId
@@ -234,7 +244,11 @@ Module mdl_Queries
                                         Clientes ON Ventas.FkClienteId = Clientes.ClienteId INNER JOIN
                                         DetalleHabitaciones ON Ventas.VentaId = DetalleHabitaciones.VentaId INNER JOIN
                                         Habitaciones ON DetalleHabitaciones.HabitacionId = Habitaciones.HabitacionId
-                                        WHERE Habitaciones.EstadoDisponibilidad=0"
+                                        WHERE Habitaciones.EstadoDisponibilidad=0 AND DetalleHabitaciones.EstadoDetalle=0"
+        },
+        {
+            "actualizar_detalle", "UPDATE DetalleHabitaciones SET EstadoDetalle=1 
+                                   WHERE VentaId=@VentaId"
         }
     }
 

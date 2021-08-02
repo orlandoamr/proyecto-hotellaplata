@@ -1,13 +1,22 @@
-﻿Imports System.Data.SqlClient
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Clases
+'   Clase: clsClientes
+'   Función: insertar, actualizar y buscar clientes en la base de datos.
+'----------------------------------------------------------------------------------------------------------------
+
+Imports System.Data.SqlClient
 
 Public Class clsServicios
-    Inherits clsEjecutarQuery
+    Inherits clsEjecutarQuery 'Hereda de la clase principal que ejecuta los queries para usar los métodos
+    ' ejecutar y obtener
 
+    'Propiedades
     Private servicioId As Integer
     Private descripcion As String
     Private precio As Integer
     Private estado As Boolean
 
+    'Getters y Setters
     Public Property _servicioId As Integer
         Get
             Return servicioId
@@ -41,6 +50,8 @@ Public Class clsServicios
         End Set
     End Property
 
+
+    'Método para insertar una servicio
     Public Function guardar(query As String)
         Dim parametros As New List(Of SqlParameter) From {
              New SqlParameter("@Descripcion", descripcion),
@@ -51,6 +62,8 @@ Public Class clsServicios
         Return ejecutar(query, parametros)
     End Function
 
+
+    'Método para actualizar una servicio
     Public Function actualizar(query As String)
         Dim parametros As New List(Of SqlParameter) From {
              New SqlParameter("@ServicioId", servicioId),
@@ -62,11 +75,4 @@ Public Class clsServicios
         Return ejecutar(query, parametros)
     End Function
 
-    Public Function eliminar(query As String)
-        Dim parametros As New List(Of SqlParameter) From {
-             New SqlParameter("@ServicioId", servicioId)
-        }
-
-        Return ejecutar(query, parametros)
-    End Function
 End Class

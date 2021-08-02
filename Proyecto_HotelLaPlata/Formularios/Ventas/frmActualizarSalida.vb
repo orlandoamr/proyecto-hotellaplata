@@ -8,6 +8,7 @@
         funciones.llenarDataGrid(dgvVentas, queriesVentas("obtener_ventas_salida"))
         dgvVentas.Columns("VentaId").Visible = False
         txtCodigoVenta.Text = ""
+        dtpFechaSalida.MaxDate = System.DateTime.Now
     End Sub
 
     Private Sub dgvVentas_DoubleClick(sender As Object, e As EventArgs) Handles dgvVentas.DoubleClick

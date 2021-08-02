@@ -39,7 +39,7 @@ Partial Class frmAgregarServicios
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnConfirmar = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.dgvServiciosAsignados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvServiciosDisponibles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -232,16 +232,16 @@ Partial Class frmAgregarServicios
         Me.btnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnConfirmar.UseVisualStyleBackColor = False
         '
-        'Label4
+        'Label10
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.22642!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(477, 9)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(143, 20)
-        Me.Label4.TabIndex = 144
-        Me.Label4.Text = "Incluir servicios"
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(466, 9)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(149, 23)
+        Me.Label10.TabIndex = 151
+        Me.Label10.Text = "Incluir servicios"
         '
         'frmAgregarServicios
         '
@@ -249,7 +249,7 @@ Partial Class frmAgregarServicios
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1103, 606)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnQuitar)
@@ -279,5 +279,5 @@ Partial Class frmAgregarServicios
     Friend WithEvents ServicioId As DataGridViewTextBoxColumn
     Friend WithEvents Servicio As DataGridViewTextBoxColumn
     Friend WithEvents Precio As DataGridViewTextBoxColumn
-    Friend WithEvents Label4 As Label
+    Friend WithEvents Label10 As Label
 End Class

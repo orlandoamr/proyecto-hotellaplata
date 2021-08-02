@@ -43,7 +43,7 @@ Partial Class frmGastosAdicionales
         Me.Label9 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnBuscarVent = New System.Windows.Forms.Button()
-        Me.btnBuscarCliente = New System.Windows.Forms.Button()
+        Me.btnBuscarProducto = New System.Windows.Forms.Button()
         Me.btnLimpiarCampos = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         CType(Me.dgvGastosAdicionales, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -266,19 +266,19 @@ Partial Class frmGastosAdicionales
         Me.btnBuscarVent.TabIndex = 141
         Me.btnBuscarVent.UseVisualStyleBackColor = False
         '
-        'btnBuscarCliente
+        'btnBuscarProducto
         '
-        Me.btnBuscarCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.btnBuscarCliente.FlatAppearance.BorderSize = 0
-        Me.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarCliente.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarCliente.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Search_icon1
-        Me.btnBuscarCliente.Location = New System.Drawing.Point(271, 223)
-        Me.btnBuscarCliente.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnBuscarCliente.Name = "btnBuscarCliente"
-        Me.btnBuscarCliente.Size = New System.Drawing.Size(42, 41)
-        Me.btnBuscarCliente.TabIndex = 140
-        Me.btnBuscarCliente.UseVisualStyleBackColor = False
+        Me.btnBuscarProducto.BackColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.btnBuscarProducto.FlatAppearance.BorderSize = 0
+        Me.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarProducto.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarProducto.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Search_icon1
+        Me.btnBuscarProducto.Location = New System.Drawing.Point(271, 223)
+        Me.btnBuscarProducto.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnBuscarProducto.Name = "btnBuscarProducto"
+        Me.btnBuscarProducto.Size = New System.Drawing.Size(42, 41)
+        Me.btnBuscarProducto.TabIndex = 140
+        Me.btnBuscarProducto.UseVisualStyleBackColor = False
         '
         'btnLimpiarCampos
         '
@@ -326,7 +326,7 @@ Partial Class frmGastosAdicionales
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnBuscarVent)
-        Me.Controls.Add(Me.btnBuscarCliente)
+        Me.Controls.Add(Me.btnBuscarProducto)
         Me.Controls.Add(Me.btnLimpiarCampos)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.dgvGastosAdicionales)
@@ -368,7 +368,7 @@ Partial Class frmGastosAdicionales
     Friend WithEvents dgvGastosAdicionales As DataGridView
     Friend WithEvents btnLimpiarCampos As Button
     Friend WithEvents btnGuardar As Button
-    Friend WithEvents btnBuscarCliente As Button
+    Friend WithEvents btnBuscarProducto As Button
     Friend WithEvents btnBuscarVent As Button
     Friend WithEvents btnCerrar As Button
     Friend WithEvents Label6 As Label

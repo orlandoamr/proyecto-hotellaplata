@@ -2,12 +2,12 @@
 '   Módulo: Formularios/Clientes
 '   Formulario: frmNuevoCliente
 '   Función: realizar registros de nuevos clientes y actualizar existentes
-'----------------------------------------------------------------------------------------------------------------
+'-----------------------------------------------------------------------------------------------------------------
 Public Class frmNuevoCliente
     'Variables globales
     Public idDeptO As Integer  ' Almacena el id de los departamentos
     Public idPais As Integer = 76 'Almacena el id de los paises, por defecto 76 que es el id de Honduras
-    Private editar As Boolean = False 'Variable identificar si el usuario está editando un registro
+    Private editar As Boolean = False 'Variable para identificar si el usuario está editando un registro
 
     'Instancias de la clases de clientes y las funciones generales
     Private clientes As New clsClientes()
@@ -116,7 +116,7 @@ Public Class frmNuevoCliente
 
     'Evento que se ejecuta al hacer doble click en una fila del datagrid
     Private Sub dgvClientes_DoubleClick_1(sender As Object, e As EventArgs) Handles dgvClientes.DoubleClick
-        'Se copian todos los elemntos de la fila a los textbox
+        'Se copian todos los elementos de la fila a los textbox
         txtIdentidad.Text = dgvClientes.CurrentRow.Cells(2).Value
         txtNombre.Text = dgvClientes.CurrentRow.Cells(0).Value
         txtApellido.Text = dgvClientes.CurrentRow.Cells(1).Value

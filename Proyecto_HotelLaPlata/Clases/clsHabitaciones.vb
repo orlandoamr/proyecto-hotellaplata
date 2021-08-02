@@ -1,7 +1,13 @@
-﻿'Clase para insertar, actualizar, buscar y eliminar registros relacionados a las habitaciones
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Clases
+'   Clase: clsHabitaciones
+'   Función: insertar, actualizar, buscar las habitaciones en la base de datos.
+'----------------------------------------------------------------------------------------------------------------
+
 Imports System.Data.SqlClient
 Public Class clsHabitaciones
-    Inherits clsEjecutarQuery
+    Inherits clsEjecutarQuery 'Hereda de la clase principal que ejecuta los queries para usar los métodos
+    ' ejecutar y obtener
 
     'Propiedades
     Private numeroHabitacion As Integer
@@ -144,10 +150,6 @@ Public Class clsHabitaciones
 
         Return ejecutar(queriesHabitaciones("actualizar"), parametros)
     End Function
-
-    Public Sub llenarComboBox(cmb As ComboBox, query As String)
-        cmb.DataSource = obtener(query, Nothing)
-    End Sub
 
 
 End Class

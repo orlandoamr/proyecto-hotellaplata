@@ -105,7 +105,7 @@ Partial Class frmNuevaVenta
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(23, 59)
+        Me.Label3.Location = New System.Drawing.Point(31, 65)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(153, 20)
@@ -118,7 +118,7 @@ Partial Class frmNuevaVenta
         Me.txtCodigoVenta.AccessibleName = "nombre"
         Me.txtCodigoVenta.Enabled = False
         Me.txtCodigoVenta.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigoVenta.Location = New System.Drawing.Point(27, 87)
+        Me.txtCodigoVenta.Location = New System.Drawing.Point(31, 87)
         Me.txtCodigoVenta.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCodigoVenta.MaxLength = 16
         Me.txtCodigoVenta.Name = "txtCodigoVenta"

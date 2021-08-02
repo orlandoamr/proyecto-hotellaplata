@@ -1,7 +1,13 @@
-﻿'Clase utilizada para insertar, actualizar, buscar y eliminar gastos adicionales
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Clases
+'   Clase: clsGastosAdicionales
+'   Función: insertar gastos adicionales de los clientes en la base de datos
+'----------------------------------------------------------------------------------------------------------------
+
 Imports System.Data.SqlClient
 Public Class clsGastosAdicionales
-    Inherits clsEjecutarQuery
+    Inherits clsEjecutarQuery 'Hereda de la clase principal que ejecuta los queries para usar los métodos
+    ' ejecutar y obtener
 
     'Propiedades
     Private gastoId As Integer
@@ -74,6 +80,7 @@ Public Class clsGastosAdicionales
         Return ejecutar(queriesGastos("insertar_gasto"), parametros)
     End Function
 
+    'Método para obtener un gasto adicional
     Public Sub obtenerGastos(dgv As DataGridView)
         Dim parametros As New List(Of SqlParameter) From {
              New SqlParameter("@VentaId", ventaId)

@@ -7,7 +7,8 @@
 Imports System.Data.SqlClient
 
 Public Class clsPaises
-    Inherits clsEjecutarQuery 'Hereda de la clase principal que ejecuta los queries
+    Inherits clsEjecutarQuery 'Hereda de la clase principal que ejecuta los queries para usar los métodos
+    ' ejecutar y obtener
 
     'Propiedades
     Private nombrePais As String

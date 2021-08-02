@@ -36,4 +36,8 @@ Public Class frmBuscarPais
         'Se cierra este formulario
         Me.Close()
     End Sub
+
+    Private Sub txtParametro_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtParametro.KeyPress
+        soloLetrasyEspacios(e)
+    End Sub
 End Class

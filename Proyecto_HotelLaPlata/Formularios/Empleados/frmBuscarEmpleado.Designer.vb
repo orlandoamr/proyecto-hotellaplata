@@ -35,11 +35,11 @@ Partial Class frmBuscarEmpleado
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(246, 53)
+        Me.Label3.Location = New System.Drawing.Point(305, 57)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(436, 20)
+        Me.Label3.Size = New System.Drawing.Size(358, 20)
         Me.Label3.TabIndex = 153
-        Me.Label3.Text = "Haga doble click en el registro de un cliente para copiarlo"
+        Me.Label3.Text = "Haga doble click en el empleado para copiarlo"
         '
         'dgvEmpleados
         '
@@ -95,6 +95,7 @@ Partial Class frmBuscarEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(989, 571)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label3)

@@ -226,12 +226,6 @@
     <Compile Include="Formularios\Productos\frmProductos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Empleados\frmRegistroDiarioEmpleados.Designer.vb">
-      <DependentUpon>frmRegistroDiarioEmpleados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Empleados\frmRegistroDiarioEmpleados.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Formularios\Servicios\frmServicios.Designer.vb">
       <DependentUpon>frmServicios.vb</DependentUpon>
     </Compile>
@@ -248,12 +242,6 @@
       <DependentUpon>frmVerDetallesVentas.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Ventas\frmVerDetallesVentas.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Empleados\frmVerRegistrosEmpleados.Designer.vb">
-      <DependentUpon>frmVerRegistrosEmpleados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Empleados\frmVerRegistrosEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Utilidades\Funciones.vb" />
@@ -361,9 +349,6 @@
     <EmbeddedResource Include="Formularios\Productos\frmProductos.resx">
       <DependentUpon>frmProductos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Empleados\frmRegistroDiarioEmpleados.resx">
-      <DependentUpon>frmRegistroDiarioEmpleados.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Servicios\frmServicios.resx">
       <DependentUpon>frmServicios.vb</DependentUpon>
     </EmbeddedResource>
@@ -372,9 +357,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Ventas\frmVerDetallesVentas.resx">
       <DependentUpon>frmVerDetallesVentas.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Empleados\frmVerRegistrosEmpleados.resx">
-      <DependentUpon>frmVerRegistrosEmpleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

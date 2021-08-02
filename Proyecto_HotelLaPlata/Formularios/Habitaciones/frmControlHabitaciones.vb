@@ -7,15 +7,15 @@
         funciones.llenarDataGrid(dgvHabitaciones, queriesHabitaciones("obtener"))
         'dgvEmpleados.Columns("FK").Visible = False
 
-        habitaciones.llenarComboBox(cmbTipoAire, queriesHabitaciones("obtener_tipo_aires"))
+        funciones.llenarComboBox(cmbTipoAire, queriesHabitaciones("obtener_tipo_aires"))
         cmbTipoAire.DisplayMember = "DescripcionAire"
         cmbTipoAire.ValueMember = "TipoAireId"
 
-        habitaciones.llenarComboBox(cmbTipoCama, queriesHabitaciones("obtener_tipo_camas"))
+        funciones.llenarComboBox(cmbTipoCama, queriesHabitaciones("obtener_tipo_camas"))
         cmbTipoCama.DisplayMember = "Descripcion"
         cmbTipoCama.ValueMember = "TipoCamaId"
 
-        habitaciones.llenarComboBox(cmbTipoHabitacion, queriesHabitaciones("obtener_tipo_habitaciones"))
+        funciones.llenarCombobox(cmbTipoHabitacion, queriesHabitaciones("obtener_tipo_habitaciones"))
         cmbTipoHabitacion.DisplayMember = "Descripcion"
         cmbTipoHabitacion.ValueMember = "TipoHabitacionId"
     End Sub
@@ -101,5 +101,33 @@
 
     Private Sub btnLimpiarCampos_Click(sender As Object, e As EventArgs) Handles btnLimpiarCampos.Click
         limpiarCampos()
+    End Sub
+
+    Private Sub txtNumeroHabitacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNumeroHabitacion.KeyPress
+        soloNumeros(e)
+    End Sub
+
+    Private Sub txtCosto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCosto.KeyPress
+        soloNumeros(e)
+    End Sub
+
+    Private Sub txtCantCamas_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCantCamas.KeyPress
+        soloNumeros(e)
+    End Sub
+
+    Private Sub txtCantAlmohadas_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCantAlmohadas.KeyPress
+        soloNumeros(e)
+    End Sub
+
+    Private Sub txtCantMesas_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCantMesas.KeyPress
+        soloNumeros(e)
+    End Sub
+
+    Private Sub txtCantSillas_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCantSillas.KeyPress
+        soloNumeros(e)
+    End Sub
+
+    Private Sub txtCantTvs_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCantTvs.KeyPress
+        soloNumeros(e)
     End Sub
 End Class

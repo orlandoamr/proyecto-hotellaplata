@@ -104,7 +104,7 @@ Public Class clsEmpleados
 
 
     'Método para buscar un empleado por parámetro.
-    Public Sub BuscarCliente(dgv As DataGridView, query As String)
+    Public Sub BuscarEmpleado(dgv As DataGridView, query As String)
         Dim parametros As New List(Of SqlParameter) From {
         New SqlParameter("@Parametro", parametroBusqueda)
     }

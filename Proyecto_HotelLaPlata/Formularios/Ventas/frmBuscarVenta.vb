@@ -12,9 +12,17 @@
 
     Private Sub btnRecargar_Click(sender As Object, e As EventArgs) Handles btnRecargar.Click
         funciones.llenarDataGrid(dgvVentas, queriesVentas("obtener"))
+        txtParametro.Clear()
     End Sub
 
     Private Sub btnBuscarVenta_Click(sender As Object, e As EventArgs) Handles btnBuscarVenta.Click
+        If txtParametro.Text = "" Then
+            MsgIngreseParametro()
+
+        Else
+            funciones._parametro = txtParametro.Text
+            funciones.llenarDataGridParametro(dgvVentas, queriesVentas("obtener_por_cliente"))
+        End If
 
     End Sub
 End Class
