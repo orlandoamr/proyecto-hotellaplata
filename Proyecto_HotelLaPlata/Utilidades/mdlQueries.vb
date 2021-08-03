@@ -178,6 +178,15 @@ Module mdl_Queries
         },
         {
             "actualizar_salida", "UPDATE Ventas SET FechaSalida=@FechaSalida, EstadoVenta=0 WHERE Ventas.VentaId=@VentaId"
+        },
+        {
+            "obtener_ventas_anio", "SELECT Year(FechaEntrada) as [Año],
+		                            DATENAME(month,FechaEntrada) as Mes,
+		                            Sum(TotalVenta) as TotalVenta
+		                            FROM Ventas
+		                            Where Year(FechaEntrada) = Year(@Parametro)
+		                            Group by Year(FechaEntrada),DATENAME(month,FechaEntrada)
+		                            Order by year(FechaEntrada),DATENAME(month,FechaEntrada)"
         }
     }
 
@@ -249,6 +258,15 @@ Module mdl_Queries
         {
             "actualizar_detalle", "UPDATE DetalleHabitaciones SET EstadoDetalle=1 
                                    WHERE VentaId=@VentaId"
+        },
+        {
+            "top_vendidas", "SELECT top 5 Concat('Habitación ',DetalleHabitaciones.HabitacionId) as [Número de habitación], 
+			                    Count(DetalleHabitaciones.HabitacionId) AS [Total ventas]
+                            FROM  Ventas INNER JOIN
+                                DetalleHabitaciones ON Ventas.VentaId = DetalleHabitaciones.VentaId
+	                        Where Month(Ventas.FechaEntrada) = Month(@Parametro)
+                            GROUP BY DetalleHabitaciones.HabitacionId
+                            ORDER BY Count(DetalleHabitaciones.HabitacionId) desc"
         }
     }
 
@@ -408,4 +426,26 @@ Module mdl_Queries
                                   WHERE DiarioEmpleadoId=@DiarioEmpleadoId"
         }
     }
+
+    'Diccionario con todos los queries relacionados a los usuarios de los empleados
+    Public queriesUsuarios As New Dictionary(Of String, String) From
+    {
+        {
+            "insertar", " INSERT INTO [dbo].[Usuarios]([EmpleadoId],[NombreUsuario],[Contrasenia],[Nivel])
+                          VALUES (@EmpleadoId,@NombreUsuario,@Contrasenia,@Nivel)"
+        },
+        {
+            "actualizar", "UPDATE [dbo].[Usuarios] SET [NombreUsuario] = @NombreUsuario,[Contrasenia] = @Contrasenia,[Nivel] = @Nivel
+                           WHERE EmpleadoId=@EmpleadoId"
+        },
+        {
+            "obtener", "SELECT Empleados.NombreEmpleado + ' '+ Empleados.ApellidoEmpleado as [Empleado], Empleados.EmpleadoId AS [Número de identidad], Usuarios.NombreUsuario as [Usuario], Usuarios.Contrasenia AS Contraseña, Usuarios.Nivel AS [Nivel de acceso]
+                        FROM   Empleados INNER JOIN
+                        Usuarios ON Empleados.EmpleadoId = Usuarios.EmpleadoId"
+        },
+        {
+            "obtener_usuario", "SELECT *FROM Usuarios WHERE NombreUsuario=@NombreUsuario AND Contrasenia=@Contrasenia"
+        }
+    }
+
 End Module

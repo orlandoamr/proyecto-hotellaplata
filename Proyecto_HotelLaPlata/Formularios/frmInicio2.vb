@@ -1,4 +1,9 @@
 ﻿Public Class frmInicio2
+    Public usuario As String
+    Public acceso As Integer
+    Public usuarioId As Integer
+
+    Private funciones As New clsFuncionesGenerales()
     Sub switchPanel(ByVal panel As Form)
         PanelContenedor.Controls.Clear()
         panel.TopLevel = False
@@ -11,7 +16,13 @@
 
     End Sub
     Private Sub frmInicio2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        lbUsuario.Text = usuario
+        Login.Hide()
+        cargar()
+    End Sub
+    Public Sub cargar()
+        Dim form As New frmEntrada()
+        switchPanel(form)
     End Sub
 
     Private Sub btnNuevoCliente_Click(sender As Object, e As EventArgs) Handles btnNuevoCliente.Click
@@ -150,5 +161,26 @@
 
     Private Sub btnDisponibilidad_Click(sender As Object, e As EventArgs) Handles btnDisponibilidad.Click
         switchPanel(frmDisponibilidad)
+    End Sub
+
+    Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
+        switchPanel(frmControlUsuarios)
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Login.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub frmInicio2_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Login.Show()
+    End Sub
+
+    Private Sub btnReporteVentas_Click(sender As Object, e As EventArgs) Handles btnReporteVentas.Click
+        switchPanel(frmReporteVentas)
+    End Sub
+
+    Private Sub btnReporteEmpleados_Click(sender As Object, e As EventArgs) Handles btnReporteEmpleados.Click
+        switchPanel(frmReporteEmpleados)
     End Sub
 End Class

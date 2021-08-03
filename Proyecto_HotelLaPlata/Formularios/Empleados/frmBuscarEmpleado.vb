@@ -15,6 +15,8 @@ Public Class frmBuscarEmpleado
     'Evento que se ejecuta al hacer doble click en una fila del datagrid
     Private Sub dgvEmpleados_DoubleClick(sender As Object, e As EventArgs) Handles dgvEmpleados.DoubleClick
         frmRegistroDiario.txtEmpleado.Text = dgvEmpleados.CurrentRow.Cells(2).Value
+        frmControlUsuarios.txtCodigoEmpleado.Text = dgvEmpleados.CurrentRow.Cells(2).Value
+        frmReporteEmpleados.txtCodigo.Text = dgvEmpleados.CurrentRow.Cells(2).Value
         Me.Close()
     End Sub
 End Class

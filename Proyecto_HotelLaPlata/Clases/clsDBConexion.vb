@@ -13,7 +13,7 @@ Public Class clsDBConexion
     'Método para abrir una conexión
     Protected Sub abrirConexion()
         Try
-            conexion.ConnectionString = "Data Source=LAPTOP-MAHQ548A;Initial Catalog=proyecto_hotel;Integrated Security=True"
+            conexion.ConnectionString = "Data Source=(local);Initial Catalog=hotel_la_plata;Integrated Security=True"
             conexion.Open()
         Catch ex As Exception
             MessageBox.Show("Ocurrió un error en la conexión al servidor de la base de datos, comuníquese con el administrador del servidor.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)

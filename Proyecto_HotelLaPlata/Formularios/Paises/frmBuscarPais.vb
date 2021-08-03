@@ -40,4 +40,9 @@ Public Class frmBuscarPais
     Private Sub txtParametro_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtParametro.KeyPress
         soloLetrasyEspacios(e)
     End Sub
+
+    Private Sub btnRecargar_Click(sender As Object, e As EventArgs) Handles btnRecargar.Click
+        txtParametro.Clear()
+        funciones.llenarDataGrid(dgvPaises, queriesPaises("obtener"))
+    End Sub
 End Class

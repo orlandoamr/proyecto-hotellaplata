@@ -75,7 +75,12 @@ Public Class clsEjecutarQuery
             End If
 
             'Se llena el datatable con los resultados
-            adaptador.Fill(datos)
+            Try
+                adaptador.Fill(datos)
+            Catch ex As Exception
+
+            End Try
+
         End Using
 
         cerrarConexion()

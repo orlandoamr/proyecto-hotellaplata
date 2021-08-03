@@ -62,5 +62,6 @@ Public Class frmRegistroDiario
     'Evento que se ejecuta al presionar el botón de cerrar ventana
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
+        frmInicio2.cargar()
     End Sub
 End Class

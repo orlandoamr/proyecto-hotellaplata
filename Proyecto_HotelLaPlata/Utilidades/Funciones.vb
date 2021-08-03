@@ -46,7 +46,7 @@
 
         Dim bCK As Boolean
         Dim strDomainType As String
-        Dim strDomainName As String
+        'Dim strDomainName As String
         Const sInvalidChars As String = "!#$%^&*()=+{}[]|\;:'/?>,< "
         Dim i As Integer
 

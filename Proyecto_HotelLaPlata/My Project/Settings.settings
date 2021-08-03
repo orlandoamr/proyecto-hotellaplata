@@ -5,10 +5,18 @@
     <Setting Name="proyecto_hotelConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=laptop-ht71q9am;Initial Catalog=proyecto_hotel;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=laptop-mahq548a;Initial Catalog=proyecto_hotel;Integrated Security=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=laptop-ht71q9am;Initial Catalog=proyecto_hotel;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=laptop-mahq548a;Initial Catalog=proyecto_hotel;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="hotel_la_plataConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=LAPTOP-MAHQ548A;Initial Catalog=hotel_la_plata;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=LAPTOP-MAHQ548A;Initial Catalog=hotel_la_plata;Integrated Security=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

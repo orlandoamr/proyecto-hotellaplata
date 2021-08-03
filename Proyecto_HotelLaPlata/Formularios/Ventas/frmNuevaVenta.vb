@@ -73,6 +73,7 @@
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
+        frmInicio2.cargar()
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -89,7 +90,7 @@
             ventas._diasEstadia = txtEstadia.Text
             ventas._costoTotal = Val(txtTotalVenta.Text)
             ventas._idCliente = txtCodigoCliente.Text
-            ventas._idEmpleado = "1615200084558"
+            ventas._idEmpleado = frmInicio2.usuarioId
 
             Dim res = ventas.insertar()
 
@@ -120,6 +121,7 @@
         txtTotalVenta.Clear()
         txtCodigoCliente.Clear()
         txtCodigoVenta.Clear()
+        txtEstadia.Clear()
         lbHabitacionesAsignadas.Items.Clear()
         lbServicios.Items.Clear()
         habitaciones.Clear()

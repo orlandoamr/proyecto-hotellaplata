@@ -35,4 +35,13 @@ Public Class clsFuncionesGenerales 'Hereda de la clase principal que ejecuta los
     Public Sub llenarCombobox(cmb As ComboBox, query As String)
         cmb.DataSource = obtener(query, Nothing)
     End Sub
+
+    'Método para llenar un combobox
+    Public Function obtenerDatos(query As String)
+        Dim parametros As New List(Of SqlParameter) From {
+             New SqlParameter("@Parametro", parametro)
+        }
+        Return obtener(query, parametros)
+    End Function
+
 End Class

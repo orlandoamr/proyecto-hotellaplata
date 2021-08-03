@@ -71,15 +71,15 @@ Partial Class frmBuscarPais
         Me.btnRecargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRecargar.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRecargar.ForeColor = System.Drawing.Color.GhostWhite
-        Me.btnRecargar.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Sync_icon
+        Me.btnRecargar.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Clear_Symbol_icon_2
         Me.btnRecargar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnRecargar.Location = New System.Drawing.Point(416, 448)
+        Me.btnRecargar.Location = New System.Drawing.Point(26, 236)
         Me.btnRecargar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRecargar.Name = "btnRecargar"
         Me.btnRecargar.Padding = New System.Windows.Forms.Padding(68, 0, 68, 0)
         Me.btnRecargar.Size = New System.Drawing.Size(298, 48)
         Me.btnRecargar.TabIndex = 157
-        Me.btnRecargar.Text = "Recargar"
+        Me.btnRecargar.Text = "Limpiar"
         Me.btnRecargar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRecargar.UseVisualStyleBackColor = False
         '
