@@ -158,6 +158,9 @@ Partial Class Login
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtUsuario)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(1058, 471)
+        Me.MinimumSize = New System.Drawing.Size(1058, 471)
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"

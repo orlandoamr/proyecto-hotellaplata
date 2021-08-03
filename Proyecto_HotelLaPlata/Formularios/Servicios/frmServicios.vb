@@ -1,4 +1,9 @@
-﻿Public Class frmServicios
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios/Servicios
+'   Formulario: frmServicios
+'   Función: Realizar el control de los servicios disponibles 
+'-----------------------------------------------------------------------------------------------------------------
+Public Class frmServicios
 
     Private servicios As New clsServicios()
     Private funciones As New clsFuncionesGenerales()
@@ -10,33 +15,41 @@
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim textBoxes As New List(Of TextBox) From {txtDescripcion, txtPrecio}
+        Dim validar = validarTextBoxVacios(textBoxes)
 
-        servicios._descripcion = txtDescripcion.Text
-        servicios._precio = txtPrecio.Text
-        servicios._estado = chkEstado.Checked
-
-        If editar = True Then
-            servicios._servicioId = txtCodigo.Text
-
-            Dim res = servicios.actualizar(queriesServicios("actualizar"))
-
-            If res(0) = False Then
-                MsgError(res(1))
-            Else
-                MsgActualizacionExitosa()
-                limpiarCampos()
-            End If
-
+        'En caso de existir un campo vacío se muestra el campo
+        If Not validar(0) Then
+            MsgCampoVacio(validar(1))
         Else
-            Dim res = servicios.guardar(queriesServicios("insertar"))
+            servicios._descripcion = txtDescripcion.Text
+            servicios._precio = txtPrecio.Text
+            servicios._estado = chkEstado.Checked
 
-            If res(0) = False Then
-                MsgError(res(1))
+            If editar = True Then
+                servicios._servicioId = txtCodigo.Text
+
+                Dim res = servicios.actualizar(queriesServicios("actualizar"))
+
+                If res(0) = False Then
+                    MsgError(res(1))
+                Else
+                    MsgActualizacionExitosa()
+                    limpiarCampos()
+                End If
+
             Else
-                MsgRegistroExitoso()
-                limpiarCampos()
+                Dim res = servicios.guardar(queriesServicios("insertar"))
+
+                If res(0) = False Then
+                    MsgError(res(1))
+                Else
+                    MsgRegistroExitoso()
+                    limpiarCampos()
+                End If
             End If
         End If
+
 
     End Sub
 

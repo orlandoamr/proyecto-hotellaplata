@@ -46,6 +46,7 @@ Partial Class frmGastosAdicionales
         Me.btnBuscarProducto = New System.Windows.Forms.Button()
         Me.btnLimpiarCampos = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.dgvGastosAdicionales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -212,7 +213,7 @@ Partial Class frmGastosAdicionales
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.dgvGastosAdicionales.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvGastosAdicionales.RowTemplate.Height = 24
-        Me.dgvGastosAdicionales.Size = New System.Drawing.Size(686, 664)
+        Me.dgvGastosAdicionales.Size = New System.Drawing.Size(686, 721)
         Me.dgvGastosAdicionales.TabIndex = 137
         '
         'Label6
@@ -316,12 +317,23 @@ Partial Class frmGastosAdicionales
         Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(543, 812)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(358, 20)
+        Me.Label10.TabIndex = 161
+        Me.Label10.Text = "Haga doble click sobre un registro para editarlo"
+        '
         'frmGastosAdicionales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1077, 852)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnCerrar)
@@ -373,4 +385,5 @@ Partial Class frmGastosAdicionales
     Friend WithEvents btnCerrar As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents Label9 As Label
+    Private WithEvents Label10 As Label
 End Class

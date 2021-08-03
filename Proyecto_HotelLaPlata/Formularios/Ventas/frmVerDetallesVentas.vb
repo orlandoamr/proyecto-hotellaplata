@@ -1,4 +1,8 @@
-﻿'Formulario para visualización de las ventas usando diferentes filtros
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios/Ventas
+'   Formulario: frmNuevaVenta
+'   Función: visualizar el detalle de una venta
+'-----------------------------------------------------------------------------------------------------------------
 Imports System.Data.SqlClient
 Public Class frmVerDetallesVentas
     Private funciones As New clsFuncionesGenerales()
@@ -34,4 +38,5 @@ Public Class frmVerDetallesVentas
         dgvVenta.DataSource = Nothing
         dgvGastosAdicionales.DataSource = Nothing
     End Sub
+
 End Class

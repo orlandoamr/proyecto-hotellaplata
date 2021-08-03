@@ -1,7 +1,14 @@
-﻿Public Class frmAsignarHabitaciones
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios/Habitaciones
+'   Formulario: frmAsignarHabitaciones
+'   Función: seleccionar habitaciones para una venta
+'-----------------------------------------------------------------------------------------------------------------
+Public Class frmAsignarHabitaciones
     Private funciones As New clsFuncionesGenerales()
 
     Public habitaciones As New Dictionary(Of Integer, Integer)
+
+    'Evento que se ejecuta al cargar el formulario
     Private Sub frmAsignarHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         funciones.llenarDataGrid(dgvHabitacionesDisponibles, queriesHabitaciones("obtener_disponibles"))
 
@@ -10,6 +17,7 @@
         Next
     End Sub
 
+    'Evento que se ejecuta al presionar el botón de agregar
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         If (dgvHabitacionesDisponibles.SelectedCells.Count > 0) Then
             Dim indice As Integer = dgvHabitacionesDisponibles.CurrentCell.RowIndex
@@ -30,11 +38,10 @@
             Else
                 MsgError2("Ya ha agregado esta habitación", "")
             End If
-
-
         End If
     End Sub
 
+    'Evento que se ejecuta al presionar el botón de quitar
     Private Sub btnQuitar_Click(sender As Object, e As EventArgs) Handles btnQuitar.Click
         If (dgvHabitacionesAsignadas.SelectedCells.Count > 0) Then
             Dim indice As Integer = dgvHabitacionesAsignadas.CurrentCell.RowIndex
@@ -46,6 +53,7 @@
         End If
     End Sub
 
+    'Evento que se ejecuta al presionar el botón de confirmar
     Private Sub btnConfirmar_Click(sender As Object, e As EventArgs) Handles btnConfirmar.Click
         If (dgvHabitacionesAsignadas.SelectedCells.Count > 0) Then
             frmNuevaVenta.habitaciones = habitaciones

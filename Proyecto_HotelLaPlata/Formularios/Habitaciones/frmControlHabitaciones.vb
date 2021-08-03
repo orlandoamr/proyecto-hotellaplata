@@ -1,17 +1,24 @@
-﻿Public Class frmControlHabitaciones
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios/Habitaciones
+'   Formulario: frmControlHabitaciones
+'   Función: realizar registros de las habitaciones
+'-----------------------------------------------------------------------------------------------------------------
+Public Class frmControlHabitaciones
     Private habitaciones As New clsHabitaciones()
     Private funciones As New clsFuncionesGenerales()
 
     Private editar As Boolean = False
+
+
+    'Evento que se ejecuta al cargar el formulario
     Private Sub clsControlHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         funciones.llenarDataGrid(dgvHabitaciones, queriesHabitaciones("obtener"))
-        'dgvEmpleados.Columns("FK").Visible = False
 
-        funciones.llenarComboBox(cmbTipoAire, queriesHabitaciones("obtener_tipo_aires"))
+        funciones.llenarCombobox(cmbTipoAire, queriesHabitaciones("obtener_tipo_aires"))
         cmbTipoAire.DisplayMember = "DescripcionAire"
         cmbTipoAire.ValueMember = "TipoAireId"
 
-        funciones.llenarComboBox(cmbTipoCama, queriesHabitaciones("obtener_tipo_camas"))
+        funciones.llenarCombobox(cmbTipoCama, queriesHabitaciones("obtener_tipo_camas"))
         cmbTipoCama.DisplayMember = "Descripcion"
         cmbTipoCama.ValueMember = "TipoCamaId"
 
@@ -19,6 +26,9 @@
         cmbTipoHabitacion.DisplayMember = "Descripcion"
         cmbTipoHabitacion.ValueMember = "TipoHabitacionId"
     End Sub
+
+
+    'Evento que se ejecuta al guardar un registro
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         'Se valida que no existan campos vacíos
         Dim textBoxes As New List(Of TextBox) From {txtNumeroHabitacion, txtCosto, txtCantCamas, txtCantAlmohadas, txtCantMesas,
@@ -69,6 +79,7 @@
 
     End Sub
 
+    'Método para limpiar todos los campos de la pantalla 
     Private Sub limpiarCampos()
         txtCantAlmohadas.Clear()
         txtCantCamas.Clear()
@@ -81,6 +92,7 @@
         funciones.llenarDataGrid(dgvHabitaciones, queriesHabitaciones("obtener"))
         editar = False
     End Sub
+
 
     Private Sub dgvHabitaciones_DoubleClick(sender As Object, e As EventArgs) Handles dgvHabitaciones.DoubleClick
         txtNumeroHabitacion.Text = dgvHabitaciones.CurrentRow.Cells(0).Value

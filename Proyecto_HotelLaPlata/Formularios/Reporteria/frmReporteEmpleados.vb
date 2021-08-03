@@ -1,4 +1,9 @@
-﻿Public Class frmReporteEmpleados
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios/Reportes
+'   Formulario: frmReporteEmpleados
+'   Función: generar un reporte de las salidas y entradas de los empleados al hotel por rango de fechas
+'-----------------------------------------------------------------------------------------------------------------
+Public Class frmReporteEmpleados
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         frmBuscarEmpleado.Show()
     End Sub

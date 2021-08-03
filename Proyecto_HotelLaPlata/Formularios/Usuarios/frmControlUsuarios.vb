@@ -1,4 +1,9 @@
-﻿Public Class frmControlUsuarios
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios/Usuarios
+'   Formulario: frmGastosAdicionales
+'   Función: realizar registros de los usuarios
+'-----------------------------------------------------------------------------------------------------------------
+Public Class frmControlUsuarios
     Private funciones As New clsFuncionesGenerales()
     Private seguridad As New clsSeguridad()
     Private usuarios As New clsUsuarios()
@@ -18,10 +23,10 @@
         'En caso de existir un campo vacío se muestra el campo
         If Not val(0) Then
             MsgCampoVacio(val(1))
-        ElseIf txtNombreUsuario.Text.Length < 6 Then
-            MessageBox.Show("El nombre usuario debe tener minimo 4 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ElseIf txtNombreUsuario.Text.Length < 5 Then
+            MessageBox.Show("El nombre usuario debe tener mínimo 5 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         ElseIf txtContrasenia.Text.Length < 8 Then
-            MessageBox.Show("La contraseña debe tener minimo 8 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("La contraseña debe tener mínimo 8 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Dim contrasenia As String = seguridad.Encriptar(txtContrasenia.Text)
             usuarios._usuarioId = txtCodigoEmpleado.Text
@@ -77,12 +82,17 @@
     End Sub
 
     Private Sub dgvUsuarios_DoubleClick(sender As Object, e As EventArgs) Handles dgvUsuarios.DoubleClick
-        txtCodigoEmpleado.Text = dgvUsuarios.CurrentRow.Cells(1).Value
-        txtNombreUsuario.Text = dgvUsuarios.CurrentRow.Cells(2).Value
-        txtNombreUsuario.Text = dgvUsuarios.CurrentRow.Cells(2).Value
-        txtContrasenia.Text = seguridad.Desencriptar(dgvUsuarios.CurrentRow.Cells(3).Value.ToString())
+        Dim acceso = dgvUsuarios.CurrentRow.Cells(4).Value
+        If acceso = 1 Then
+            MessageBox.Show("No puede editar a un administrador")
+        Else
+            txtCodigoEmpleado.Text = dgvUsuarios.CurrentRow.Cells(1).Value
+            txtNombreUsuario.Text = dgvUsuarios.CurrentRow.Cells(2).Value
+            txtContrasenia.Text = seguridad.Desencriptar(dgvUsuarios.CurrentRow.Cells(3).Value.ToString())
 
-        editar = True
+            editar = True
+        End If
+
     End Sub
 
     Private Sub btnLimpiarCampos_Click(sender As Object, e As EventArgs) Handles btnLimpiarCampos.Click

@@ -1,4 +1,9 @@
-﻿'En este módulo están todos los queries usados en el proyecto.
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Utilidades
+'   Clase: mdlQueries
+'   Función: almacenar todos los queries para hacer consultas e inserciones
+'-----------------------------------------------------------------------------------------------------------------
+
 Module mdl_Queries
     'Diccionario con todos los queries relacionados a clientes.
     Public queriesClientes As New Dictionary(Of String, String) From
@@ -80,6 +85,7 @@ Module mdl_Queries
                                 OR d.NombreDepartamento LIKE Concat('%', @Parametro, '%')"
         }
     }
+
     'Diccionario con todos los queries relacionados a servicios
     Public queriesServicios As New Dictionary(Of String, String) From {
         {
@@ -312,7 +318,8 @@ Module mdl_Queries
             "obtener", "SELECT Empleados.NombreEmpleado AS [Nombre del empleado], Empleados.ApellidoEmpleado AS [Apellido del empleado], Empleados.EmpleadoId AS [Número de identidad], Empleados.Telefono AS [Número de teléfono], 
                                Empleados.Correo AS [Correo electrónico], Cargos.Descripcion AS Cargo, Empleados.FKCargoId
                         FROM   Empleados INNER JOIN
-                               Cargos ON Empleados.FKCargoId = Cargos.CargoId"
+                               Cargos ON Empleados.FKCargoId = Cargos.CargoId
+                               WHERE NOT Empleados.EmpleadoId='1'"
         },
         {
             "insertar", "INSERT INTO [dbo].[Empleados]([EmpleadoId],[NombreEmpleado],[ApellidoEmpleado],[Telefono] ,[Correo],[FKCargoId])
@@ -441,7 +448,8 @@ Module mdl_Queries
         {
             "obtener", "SELECT Empleados.NombreEmpleado + ' '+ Empleados.ApellidoEmpleado as [Empleado], Empleados.EmpleadoId AS [Número de identidad], Usuarios.NombreUsuario as [Usuario], Usuarios.Contrasenia AS Contraseña, Usuarios.Nivel AS [Nivel de acceso]
                         FROM   Empleados INNER JOIN
-                        Usuarios ON Empleados.EmpleadoId = Usuarios.EmpleadoId"
+                        Usuarios ON Empleados.EmpleadoId = Usuarios.EmpleadoId
+                        WHERE NOT Empleados.EmpleadoId='1'"
         },
         {
             "obtener_usuario", "SELECT *FROM Usuarios WHERE NombreUsuario=@NombreUsuario AND Contrasenia=@Contrasenia"

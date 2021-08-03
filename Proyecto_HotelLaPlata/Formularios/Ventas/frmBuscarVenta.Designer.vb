@@ -174,8 +174,12 @@ Partial Class frmBuscarVenta
         Me.Controls.Add(Me.btnBuscarVenta)
         Me.Controls.Add(Me.dgvVentas)
         Me.Controls.Add(Me.txtParametro)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(1119, 645)
+        Me.MinimumSize = New System.Drawing.Size(1119, 645)
         Me.Name = "frmBuscarVenta"
-        Me.Text = "frmBuscarVenta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Buscar venta"
         CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

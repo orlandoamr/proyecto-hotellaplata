@@ -85,7 +85,7 @@ Public Class frmNuevoCliente
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         'Se valida que el campo para el parámetro no está vacío
         If (txtBuscarCliente.Text = "") Then
-            MsgIngreseId()
+
         Else
             'Se llena el grid con el resultado de la busqueda.
             clientes._parametroBusqueda = txtBuscarCliente.Text

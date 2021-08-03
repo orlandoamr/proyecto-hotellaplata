@@ -25,10 +25,15 @@ Partial Class frmInicio2
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lbUsuario = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.pbLogo = New System.Windows.Forms.PictureBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.btnClientes = New System.Windows.Forms.Button()
         Me.panelSubClientes = New System.Windows.Forms.Panel()
         Me.btnVerClientes = New System.Windows.Forms.Button()
         Me.btnNuevoCliente = New System.Windows.Forms.Button()
+        Me.btnVentas = New System.Windows.Forms.Button()
         Me.panelSubVentas = New System.Windows.Forms.Panel()
         Me.btnActualizarSalida = New System.Windows.Forms.Button()
         Me.btnServicios = New System.Windows.Forms.Button()
@@ -36,29 +41,25 @@ Partial Class frmInicio2
         Me.btnGastosAdicionales = New System.Windows.Forms.Button()
         Me.btnVerDetalleVentas = New System.Windows.Forms.Button()
         Me.btnNuevaVenta = New System.Windows.Forms.Button()
+        Me.btnEmpleados = New System.Windows.Forms.Button()
         Me.panelSubEmpleados = New System.Windows.Forms.Panel()
         Me.btnActSalida = New System.Windows.Forms.Button()
         Me.btnRegistroDiario = New System.Windows.Forms.Button()
         Me.btnNuevoEmpleado = New System.Windows.Forms.Button()
+        Me.btnHabitaciones = New System.Windows.Forms.Button()
         Me.panelSubHabitaciones = New System.Windows.Forms.Panel()
         Me.btnDisponibilidad = New System.Windows.Forms.Button()
         Me.btnControlHabitaciones = New System.Windows.Forms.Button()
+        Me.btnReporteria = New System.Windows.Forms.Button()
         Me.panelSubReporteria = New System.Windows.Forms.Panel()
         Me.btnReporteEmpleados = New System.Windows.Forms.Button()
         Me.btnReporteVentas = New System.Windows.Forms.Button()
+        Me.btnConfiguracion = New System.Windows.Forms.Button()
         Me.panelSubConfiguracion = New System.Windows.Forms.Panel()
         Me.btnUsuarios = New System.Windows.Forms.Button()
         Me.PanelContenedor = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.pbLogo = New System.Windows.Forms.PictureBox()
-        Me.btnClientes = New System.Windows.Forms.Button()
-        Me.btnVentas = New System.Windows.Forms.Button()
-        Me.btnEmpleados = New System.Windows.Forms.Button()
-        Me.btnHabitaciones = New System.Windows.Forms.Button()
-        Me.btnReporteria = New System.Windows.Forms.Button()
-        Me.btnConfiguracion = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
+        CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.panelSubClientes.SuspendLayout()
         Me.panelSubVentas.SuspendLayout()
@@ -66,7 +67,6 @@ Partial Class frmInicio2
         Me.panelSubHabitaciones.SuspendLayout()
         Me.panelSubReporteria.SuspendLayout()
         Me.panelSubConfiguracion.SuspendLayout()
-        CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -106,6 +106,52 @@ Partial Class frmInicio2
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Usuario:"
         '
+        'Button2
+        '
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.GhostWhite
+        Me.Button2.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Help_icon
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(237, 805)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.Button2.Size = New System.Drawing.Size(109, 38)
+        Me.Button2.TabIndex = 3
+        Me.Button2.Text = "Ayuda"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.GhostWhite
+        Me.Button1.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Logout_Rounded_Left_icon1
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(13, 805)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.Button1.Size = New System.Drawing.Size(93, 38)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Salir"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'pbLogo
+        '
+        Me.pbLogo.BackColor = System.Drawing.Color.Transparent
+        Me.pbLogo.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.La_Plata13
+        Me.pbLogo.Location = New System.Drawing.Point(79, -11)
+        Me.pbLogo.Name = "pbLogo"
+        Me.pbLogo.Size = New System.Drawing.Size(218, 197)
+        Me.pbLogo.TabIndex = 1
+        Me.pbLogo.TabStop = False
+        '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.AutoScroll = True
@@ -127,6 +173,24 @@ Partial Class frmInicio2
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(361, 550)
         Me.FlowLayoutPanel1.TabIndex = 0
+        '
+        'btnClientes
+        '
+        Me.btnClientes.FlatAppearance.BorderSize = 0
+        Me.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClientes.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClientes.ForeColor = System.Drawing.Color.GhostWhite
+        Me.btnClientes.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.People_icon_2_1
+        Me.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnClientes.Location = New System.Drawing.Point(4, 4)
+        Me.btnClientes.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnClientes.Name = "btnClientes"
+        Me.btnClientes.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
+        Me.btnClientes.Size = New System.Drawing.Size(329, 81)
+        Me.btnClientes.TabIndex = 0
+        Me.btnClientes.Text = "Clientes"
+        Me.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnClientes.UseVisualStyleBackColor = True
         '
         'panelSubClientes
         '
@@ -170,6 +234,24 @@ Partial Class frmInicio2
         Me.btnNuevoCliente.Text = "Nuevo Cliente"
         Me.btnNuevoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNuevoCliente.UseVisualStyleBackColor = True
+        '
+        'btnVentas
+        '
+        Me.btnVentas.FlatAppearance.BorderSize = 0
+        Me.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVentas.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVentas.ForeColor = System.Drawing.Color.GhostWhite
+        Me.btnVentas.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Bill_icon
+        Me.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnVentas.Location = New System.Drawing.Point(4, 208)
+        Me.btnVentas.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnVentas.Name = "btnVentas"
+        Me.btnVentas.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
+        Me.btnVentas.Size = New System.Drawing.Size(329, 74)
+        Me.btnVentas.TabIndex = 2
+        Me.btnVentas.Text = "Ventas"
+        Me.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnVentas.UseVisualStyleBackColor = True
         '
         'panelSubVentas
         '
@@ -282,6 +364,24 @@ Partial Class frmInicio2
         Me.btnNuevaVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNuevaVenta.UseVisualStyleBackColor = True
         '
+        'btnEmpleados
+        '
+        Me.btnEmpleados.FlatAppearance.BorderSize = 0
+        Me.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEmpleados.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEmpleados.ForeColor = System.Drawing.Color.GhostWhite
+        Me.btnEmpleados.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Management_icon_1
+        Me.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnEmpleados.Location = New System.Drawing.Point(4, 578)
+        Me.btnEmpleados.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnEmpleados.Name = "btnEmpleados"
+        Me.btnEmpleados.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
+        Me.btnEmpleados.Size = New System.Drawing.Size(329, 77)
+        Me.btnEmpleados.TabIndex = 3
+        Me.btnEmpleados.Text = "Empleados"
+        Me.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnEmpleados.UseVisualStyleBackColor = True
+        '
         'panelSubEmpleados
         '
         Me.panelSubEmpleados.Controls.Add(Me.btnActSalida)
@@ -342,6 +442,24 @@ Partial Class frmInicio2
         Me.btnNuevoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNuevoEmpleado.UseVisualStyleBackColor = True
         '
+        'btnHabitaciones
+        '
+        Me.btnHabitaciones.FlatAppearance.BorderSize = 0
+        Me.btnHabitaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHabitaciones.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHabitaciones.ForeColor = System.Drawing.Color.GhostWhite
+        Me.btnHabitaciones.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Bedroom_icon_1
+        Me.btnHabitaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnHabitaciones.Location = New System.Drawing.Point(4, 805)
+        Me.btnHabitaciones.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnHabitaciones.Name = "btnHabitaciones"
+        Me.btnHabitaciones.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
+        Me.btnHabitaciones.Size = New System.Drawing.Size(329, 80)
+        Me.btnHabitaciones.TabIndex = 4
+        Me.btnHabitaciones.Text = "Habitaciones"
+        Me.btnHabitaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnHabitaciones.UseVisualStyleBackColor = True
+        '
         'panelSubHabitaciones
         '
         Me.panelSubHabitaciones.Controls.Add(Me.btnDisponibilidad)
@@ -384,6 +502,24 @@ Partial Class frmInicio2
         Me.btnControlHabitaciones.Text = "Control "
         Me.btnControlHabitaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnControlHabitaciones.UseVisualStyleBackColor = True
+        '
+        'btnReporteria
+        '
+        Me.btnReporteria.FlatAppearance.BorderSize = 0
+        Me.btnReporteria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReporteria.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReporteria.ForeColor = System.Drawing.Color.GhostWhite
+        Me.btnReporteria.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Report_File_icon
+        Me.btnReporteria.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnReporteria.Location = New System.Drawing.Point(4, 994)
+        Me.btnReporteria.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnReporteria.Name = "btnReporteria"
+        Me.btnReporteria.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
+        Me.btnReporteria.Size = New System.Drawing.Size(329, 75)
+        Me.btnReporteria.TabIndex = 5
+        Me.btnReporteria.Text = "Reporteria"
+        Me.btnReporteria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReporteria.UseVisualStyleBackColor = True
         '
         'panelSubReporteria
         '
@@ -428,6 +564,24 @@ Partial Class frmInicio2
         Me.btnReporteVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnReporteVentas.UseVisualStyleBackColor = True
         '
+        'btnConfiguracion
+        '
+        Me.btnConfiguracion.FlatAppearance.BorderSize = 0
+        Me.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConfiguracion.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConfiguracion.ForeColor = System.Drawing.Color.GhostWhite
+        Me.btnConfiguracion.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Administrative_Tools_icon_2_1
+        Me.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnConfiguracion.Location = New System.Drawing.Point(4, 1194)
+        Me.btnConfiguracion.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnConfiguracion.Name = "btnConfiguracion"
+        Me.btnConfiguracion.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
+        Me.btnConfiguracion.Size = New System.Drawing.Size(329, 79)
+        Me.btnConfiguracion.TabIndex = 6
+        Me.btnConfiguracion.Text = "Usuarios"
+        Me.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnConfiguracion.UseVisualStyleBackColor = True
+        '
         'panelSubConfiguracion
         '
         Me.panelSubConfiguracion.Controls.Add(Me.btnUsuarios)
@@ -463,160 +617,6 @@ Partial Class frmInicio2
         Me.PanelContenedor.Size = New System.Drawing.Size(1077, 852)
         Me.PanelContenedor.TabIndex = 2
         '
-        'Button2
-        '
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.GhostWhite
-        Me.Button2.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Help_icon
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(237, 805)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button2.Size = New System.Drawing.Size(109, 38)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Ayuda"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.GhostWhite
-        Me.Button1.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Logout_Rounded_Left_icon1
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(13, 805)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button1.Size = New System.Drawing.Size(93, 38)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Salir"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'pbLogo
-        '
-        Me.pbLogo.BackColor = System.Drawing.Color.Transparent
-        Me.pbLogo.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.La_Plata13
-        Me.pbLogo.Location = New System.Drawing.Point(79, -11)
-        Me.pbLogo.Name = "pbLogo"
-        Me.pbLogo.Size = New System.Drawing.Size(218, 197)
-        Me.pbLogo.TabIndex = 1
-        Me.pbLogo.TabStop = False
-        '
-        'btnClientes
-        '
-        Me.btnClientes.FlatAppearance.BorderSize = 0
-        Me.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClientes.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClientes.ForeColor = System.Drawing.Color.GhostWhite
-        Me.btnClientes.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.People_icon_2_1
-        Me.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnClientes.Location = New System.Drawing.Point(4, 4)
-        Me.btnClientes.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnClientes.Name = "btnClientes"
-        Me.btnClientes.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
-        Me.btnClientes.Size = New System.Drawing.Size(329, 81)
-        Me.btnClientes.TabIndex = 0
-        Me.btnClientes.Text = "Clientes"
-        Me.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnClientes.UseVisualStyleBackColor = True
-        '
-        'btnVentas
-        '
-        Me.btnVentas.FlatAppearance.BorderSize = 0
-        Me.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVentas.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVentas.ForeColor = System.Drawing.Color.GhostWhite
-        Me.btnVentas.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Bill_icon
-        Me.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnVentas.Location = New System.Drawing.Point(4, 208)
-        Me.btnVentas.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnVentas.Name = "btnVentas"
-        Me.btnVentas.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
-        Me.btnVentas.Size = New System.Drawing.Size(329, 74)
-        Me.btnVentas.TabIndex = 2
-        Me.btnVentas.Text = "Ventas"
-        Me.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnVentas.UseVisualStyleBackColor = True
-        '
-        'btnEmpleados
-        '
-        Me.btnEmpleados.FlatAppearance.BorderSize = 0
-        Me.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEmpleados.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEmpleados.ForeColor = System.Drawing.Color.GhostWhite
-        Me.btnEmpleados.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Management_icon_1
-        Me.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnEmpleados.Location = New System.Drawing.Point(4, 578)
-        Me.btnEmpleados.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnEmpleados.Name = "btnEmpleados"
-        Me.btnEmpleados.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
-        Me.btnEmpleados.Size = New System.Drawing.Size(329, 77)
-        Me.btnEmpleados.TabIndex = 3
-        Me.btnEmpleados.Text = "Empleados"
-        Me.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnEmpleados.UseVisualStyleBackColor = True
-        '
-        'btnHabitaciones
-        '
-        Me.btnHabitaciones.FlatAppearance.BorderSize = 0
-        Me.btnHabitaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHabitaciones.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHabitaciones.ForeColor = System.Drawing.Color.GhostWhite
-        Me.btnHabitaciones.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Bedroom_icon_1
-        Me.btnHabitaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnHabitaciones.Location = New System.Drawing.Point(4, 805)
-        Me.btnHabitaciones.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnHabitaciones.Name = "btnHabitaciones"
-        Me.btnHabitaciones.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
-        Me.btnHabitaciones.Size = New System.Drawing.Size(329, 80)
-        Me.btnHabitaciones.TabIndex = 4
-        Me.btnHabitaciones.Text = "Habitaciones"
-        Me.btnHabitaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnHabitaciones.UseVisualStyleBackColor = True
-        '
-        'btnReporteria
-        '
-        Me.btnReporteria.FlatAppearance.BorderSize = 0
-        Me.btnReporteria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReporteria.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReporteria.ForeColor = System.Drawing.Color.GhostWhite
-        Me.btnReporteria.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Report_File_icon
-        Me.btnReporteria.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnReporteria.Location = New System.Drawing.Point(4, 994)
-        Me.btnReporteria.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnReporteria.Name = "btnReporteria"
-        Me.btnReporteria.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
-        Me.btnReporteria.Size = New System.Drawing.Size(329, 75)
-        Me.btnReporteria.TabIndex = 5
-        Me.btnReporteria.Text = "Reporteria"
-        Me.btnReporteria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnReporteria.UseVisualStyleBackColor = True
-        '
-        'btnConfiguracion
-        '
-        Me.btnConfiguracion.FlatAppearance.BorderSize = 0
-        Me.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnConfiguracion.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfiguracion.ForeColor = System.Drawing.Color.GhostWhite
-        Me.btnConfiguracion.Image = Global.Proyecto_HotelLaPlata.My.Resources.Resources.Administrative_Tools_icon_2_1
-        Me.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnConfiguracion.Location = New System.Drawing.Point(4, 1194)
-        Me.btnConfiguracion.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnConfiguracion.Name = "btnConfiguracion"
-        Me.btnConfiguracion.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
-        Me.btnConfiguracion.Size = New System.Drawing.Size(329, 79)
-        Me.btnConfiguracion.TabIndex = 6
-        Me.btnConfiguracion.Text = "Usuarios"
-        Me.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnConfiguracion.UseVisualStyleBackColor = True
-        '
         'frmInicio2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -629,9 +629,10 @@ Partial Class frmInicio2
         Me.MinimumSize = New System.Drawing.Size(1466, 891)
         Me.Name = "frmInicio2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Sistema de control y adminisrtación Hotel La Plata"
+        Me.Text = "Sistema de control  Hotel La Plata"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.panelSubClientes.ResumeLayout(False)
         Me.panelSubVentas.ResumeLayout(False)
@@ -639,7 +640,6 @@ Partial Class frmInicio2
         Me.panelSubHabitaciones.ResumeLayout(False)
         Me.panelSubReporteria.ResumeLayout(False)
         Me.panelSubConfiguracion.ResumeLayout(False)
-        CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -1,4 +1,8 @@
-﻿'En este módulo están las validaciones que se usan en varios formularios del proyecto.
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Utilidades
+'   Clase: mdlValidacionesGlobales
+'   Función: Almacenar las validaciones que se usan en varias pantallas del sistema
+'-----------------------------------------------------------------------------------------------------------------
 Module mdlValidacionesGlobales
 
     'Función para validar un número de identidad hondureño

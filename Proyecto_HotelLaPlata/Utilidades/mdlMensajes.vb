@@ -1,4 +1,9 @@
-﻿Module mdlMensajes
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Utilidades
+'   Clase: mdlMensajes
+'   Función: Todos los mensajes que se muestran en pantalla
+'-----------------------------------------------------------------------------------------------------------------
+Module mdlMensajes
     'Exitoos
     Public Sub MsgRegistroExitoso()
         MessageBox.Show("Registro realizado exitosamente.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -6,9 +11,7 @@
     Public Sub MsgActualizacionExitosa()
         MessageBox.Show("Registro actualizado exitosamente.", "Actualizacion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
-    Public Sub MsgEliminacionExitosa()
-        MessageBox.Show("Se ha eliminado el registro exitosamente.", "Eliminación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    End Sub
+
 
     'Errores
     Public Sub MsgIdentidadDuplicada()
@@ -20,13 +23,6 @@
     End Sub
     Public Sub MsgCamposVacios()
         MessageBox.Show("No puede dejar campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    End Sub
-    Public Sub MsgDepartamento()
-        MessageBox.Show("Seleccione un departamento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    End Sub
-
-    Public Sub MsgIdentidadNumerico()
-        MessageBox.Show("El numero de identidad debe ser unicamente numérico, intente de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
 
     Public Sub MsgIdentidadHonduras()
@@ -43,19 +39,8 @@
     Public Sub MsgCodigoVacio()
         MessageBox.Show("Seleccione un registro para continuar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
-
-    Public Sub MsgErrorEliminarCliente()
-        MessageBox.Show("No puede eliminar este cliente, debido a que existen otros registros relacionados a él.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    End Sub
-    Public Sub MsgIngreseId()
-        MessageBox.Show("Ingrese un número de identidad", "Ingrese un Id", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    End Sub
     Public Sub MsgIngreseParametro()
         MessageBox.Show("Ingrese un parámetro para realizar la busqueda", "Ingrese parámetro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    End Sub
-
-    Public Sub MsgIdDuplicado()
-        MessageBox.Show("Ya existe un registro con con el ID ingresado", "ID Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
     Public Sub MsgNumeroInvalido()
         MessageBox.Show("El número de teléfono es inválido, debe tener 8 dígitos y empezar con 2,3,8,9", "Teléfono inválido", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -64,7 +49,9 @@
     Public Sub MsgCorreoInvalido()
         MessageBox.Show("El correo electrónico es inválido, intente de nuevo", "Correo inválido", MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
-
+    Public Sub MsgDepartamento()
+        MessageBox.Show("Seleccione un departamento, intente de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    End Sub
     Public Sub MsgError(msg As String)
         MessageBox.Show("Ha ocurrido un error: " & msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
@@ -76,5 +63,10 @@
     Public Sub MsgError2(campo As String, campo2 As String)
         MessageBox.Show(campo, campo2, MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
+
+    Public Sub MsgErrorConexion()
+        MessageBox.Show("Ocurrió un error en la conexión al servidor de la base de datos, comuníquese con el administrador del servidor.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    End Sub
+
 
 End Module

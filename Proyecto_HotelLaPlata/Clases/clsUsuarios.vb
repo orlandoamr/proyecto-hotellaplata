@@ -1,13 +1,22 @@
-﻿Imports System.Data.SqlClient
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Clases
+'   Clase: clsUsuarios
+'   Función: insertar, actualizar y buscar los usuarios de los empleados en la base de datos.
+'----------------------------------------------------------------------------------------------------------------
+
+Imports System.Data.SqlClient
 
 Public Class clsUsuarios
-    Inherits clsEjecutarQuery
+    Inherits clsEjecutarQuery 'Hereda de la clase principal que ejecuta los queries para usar los métodos
+    ' ejecutar y obtener
 
+    'Propiedades
     Private usuarioId As String
     Private nombreUsuario As String
     Private contrasenia As String
     Private nivelAcceso As Integer
 
+    'Getters y Setters
     Public Property _usuarioId As String
         Get
             Return usuarioId
@@ -41,6 +50,7 @@ Public Class clsUsuarios
         End Set
     End Property
 
+    'Método para insertar un nuevo usuario
     Public Function insertar()
         Dim parametros As New List(Of SqlParameter) From {
              New SqlParameter("@EmpleadoId", usuarioId),
@@ -52,6 +62,7 @@ Public Class clsUsuarios
         Return ejecutar(queriesUsuarios("insertar"), parametros)
     End Function
 
+    'Método para actualizar un usuario
     Public Function actualizar()
         Dim parametros As New List(Of SqlParameter) From {
             New SqlParameter("@EmpleadoId", usuarioId),
@@ -63,6 +74,7 @@ Public Class clsUsuarios
         Return ejecutar(queriesUsuarios("actualizar"), parametros)
     End Function
 
+    'Método para buscar un usuario
     Public Function verificarUsuario()
         Dim parametros As New List(Of SqlParameter) From {
              New SqlParameter("@NombreUsuario", nombreUsuario),

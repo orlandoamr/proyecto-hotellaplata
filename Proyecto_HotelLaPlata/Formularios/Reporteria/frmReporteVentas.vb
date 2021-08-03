@@ -1,4 +1,9 @@
-﻿Public Class frmReporteVentas
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios/Reportes
+'   Formulario: frmReporteEmpleados
+'   Función: generar un reporte de las ventas por rango de fechas
+'-----------------------------------------------------------------------------------------------------------------
+Public Class frmReporteVentas
     Private Sub frmReporteVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtpEntrada.MaxDate = System.DateTime.Now
         dtpSalida.MaxDate = System.DateTime.Now

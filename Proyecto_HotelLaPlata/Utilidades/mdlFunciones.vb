@@ -1,4 +1,9 @@
-﻿Module Funciones
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Utilidades
+'   Clase: Funciones
+'   Función: Funciones para validar campos de texto
+'-----------------------------------------------------------------------------------------------------------------
+Module mdlFunciones
     Public Sub soloLetras(e As KeyPressEventArgs)
         If Asc(e.KeyChar) <> 8 Then
             If (Asc(e.KeyChar) < 64 Or Asc(e.KeyChar) > 93) And (Asc(e.KeyChar) < 97 Or Asc(e.KeyChar) > 122) Then

@@ -100,9 +100,12 @@ Partial Class frmBuscarProducto
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.dgvProducto)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(675, 567)
+        Me.MinimumSize = New System.Drawing.Size(675, 567)
         Me.Name = "frmBuscarProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmBuscarProducto"
+        Me.Text = "Buscar producto"
         CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

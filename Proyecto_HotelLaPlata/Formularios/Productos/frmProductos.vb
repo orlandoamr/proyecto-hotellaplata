@@ -1,4 +1,8 @@
-﻿Imports System.Data.SqlClient
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios/Productos
+'   Formulario: frmProductos
+'   Función: realizar registros de los productos para la venta
+'-----------------------------------------------------------------------------------------------------------------
 Public Class frmProductos
     Private funciones As New clsFuncionesGenerales()
     Private productos As New clsProductos()

@@ -1,7 +1,13 @@
-﻿Public Class frmBuscarVenta
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios/Ventas
+'   Formulario: frmBuscarVentas
+'   Función: buscar las ventas
+'-----------------------------------------------------------------------------------------------------------------
+Public Class frmBuscarVenta
     Private funciones As New clsFuncionesGenerales()
     Private Sub frmBuscarVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         funciones.llenarDataGrid(dgvVentas, queriesVentas("obtener"))
+        dgvVentas.Columns("VentaId").Visible = False
     End Sub
 
     Private Sub dgvVentas_DoubleClick(sender As Object, e As EventArgs) Handles dgvVentas.DoubleClick

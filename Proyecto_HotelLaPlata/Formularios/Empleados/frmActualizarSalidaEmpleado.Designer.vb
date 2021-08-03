@@ -34,6 +34,7 @@ Partial Class frmActualizarSalidaEmpleado
         Me.dgvRegistros = New System.Windows.Forms.DataGridView()
         Me.dtpHoraSalida = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dgvRegistros, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -159,7 +160,7 @@ Partial Class frmActualizarSalidaEmpleado
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.dgvRegistros.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvRegistros.RowTemplate.Height = 24
-        Me.dgvRegistros.Size = New System.Drawing.Size(686, 727)
+        Me.dgvRegistros.Size = New System.Drawing.Size(686, 701)
         Me.dgvRegistros.TabIndex = 142
         '
         'dtpHoraSalida
@@ -182,12 +183,23 @@ Partial Class frmActualizarSalidaEmpleado
         Me.Label4.TabIndex = 140
         Me.Label4.Text = "Hora de salida"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(531, 812)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(358, 20)
+        Me.Label1.TabIndex = 149
+        Me.Label1.Text = "Haga doble click sobre un registro para editarlo"
+        '
         'frmActualizarSalidaEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1077, 852)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtCodigo)
         Me.Controls.Add(Me.btnLimpiarCampos)
@@ -215,4 +227,5 @@ Partial Class frmActualizarSalidaEmpleado
     Friend WithEvents dgvRegistros As DataGridView
     Friend WithEvents dtpHoraSalida As DateTimePicker
     Friend WithEvents Label4 As Label
+    Private WithEvents Label1 As Label
 End Class

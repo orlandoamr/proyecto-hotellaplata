@@ -1,4 +1,9 @@
-﻿Public Class frmActualizarSalida
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios/Ventas
+'   Formulario: frmActualizarSalida
+'   Función: actualizar la salida de un cliente 
+'-----------------------------------------------------------------------------------------------------------------
+Public Class frmActualizarSalida
     Private funciones As New clsFuncionesGenerales()
     Private ventas As New clsVentas()
 
@@ -47,5 +52,10 @@
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
         frmInicio2.cargar()
+    End Sub
+
+    Private Sub btnLimpiarCampos_Click(sender As Object, e As EventArgs) Handles btnLimpiarCampos.Click
+        funciones.llenarDataGrid(dgvVentas, queriesVentas("obtener_ventas_salida"))
+        txtCodigoVenta.Text = ""
     End Sub
 End Class

@@ -1,4 +1,9 @@
-﻿Public Class Login
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios
+'   Formulario: frmLogin
+'   Función: Formulario de inicio de sesión
+'-----------------------------------------------------------------------------------------------------------------
+Public Class Login
     Private usuarios As New clsUsuarios()
     Private seguridad As New clsSeguridad()
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs)
@@ -28,19 +33,24 @@
 
             If dt.Rows.Count = 0 Then
                 MessageBox.Show("Usuario/contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
+                txtContraseña.Clear()
+                txtUsuario.Clear()
             Else
                 For Each Row In dt.Rows
                     frmInicio2.acceso = Row("Nivel")
-                    frmInicio2.acceso = Row("EmpleadoId")
+                    frmInicio2.usuarioId = Row("EmpleadoId")
                 Next
                 frmInicio2.usuario = txtUsuario.Text
                 frmInicio2.Show()
-                MessageBox.Show("Bienvenido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Bienvenido usuario: " & txtUsuario.Text, "Inicio exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 txtUsuario.Clear()
                 txtContraseña.Clear()
             End If
 
         End If
+    End Sub
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

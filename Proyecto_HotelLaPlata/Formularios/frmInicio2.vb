@@ -1,14 +1,20 @@
-﻿Public Class frmInicio2
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios
+'   Formulario: frmInicio
+'   Función: Formulario principal del sistema 
+'-----------------------------------------------------------------------------------------------------------------
+Public Class frmInicio2
     Public usuario As String
     Public acceso As Integer
-    Public usuarioId As Integer
+    Public usuarioId As String
 
     Private funciones As New clsFuncionesGenerales()
     Sub switchPanel(ByVal panel As Form)
-        PanelContenedor.Controls.Clear()
-        panel.TopLevel = False
-        PanelContenedor.Controls.Add(panel)
+
         Try
+            PanelContenedor.Controls.Clear()
+            panel.TopLevel = False
+            PanelContenedor.Controls.Add(panel)
             panel.Show()
         Catch ex As Exception
 
@@ -19,6 +25,14 @@
         lbUsuario.Text = usuario
         Login.Hide()
         cargar()
+
+        If acceso = 2 Then
+            btnServicios.Enabled = False
+            btnProductos.Enabled = False
+            btnNuevoEmpleado.Enabled = False
+            btnControlHabitaciones.Enabled = False
+            btnConfiguracion.Enabled = False
+        End If
     End Sub
     Public Sub cargar()
         Dim form As New frmEntrada()

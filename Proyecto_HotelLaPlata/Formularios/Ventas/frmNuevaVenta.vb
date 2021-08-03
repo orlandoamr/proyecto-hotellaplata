@@ -1,4 +1,9 @@
-﻿Public Class frmNuevaVenta
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios/Ventas
+'   Formulario: frmNuevaVenta
+'   Función: realizar los registros de nuevas ventas
+'-----------------------------------------------------------------------------------------------------------------
+Public Class frmNuevaVenta
     Public habitaciones As New Dictionary(Of Integer, Integer)
     Public servicios As New Dictionary(Of Integer, Dictionary(Of String, Integer))
 

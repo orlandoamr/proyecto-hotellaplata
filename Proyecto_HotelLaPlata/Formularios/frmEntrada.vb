@@ -1,4 +1,9 @@
-﻿Public Class frmEntrada
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios
+'   Formulario: frmEntrada
+'   Función: Formulario de inicio
+'-----------------------------------------------------------------------------------------------------------------
+Public Class frmEntrada
     Private funciones As New clsFuncionesGenerales()
     Private Sub frmEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         funciones._parametro = System.DateTime.Now.ToString()

@@ -1,4 +1,9 @@
-﻿Public Class frmAgregarServicios
+﻿'-----------------------------------------------------------------------------------------------------------------
+'   Módulo: Formularios/Servicios
+'   Formulario: frmAgregarServicios
+'   Función: Asignarle servicios a los clientes
+'-----------------------------------------------------------------------------------------------------------------
+Public Class frmAgregarServicios
     Private funciones As New clsFuncionesGenerales()
     Public servicios As New Dictionary(Of Integer, Dictionary(Of String, Integer))
     Private Sub frmAgregarServicios_Load(sender As Object, e As EventArgs) Handles MyBase.Load

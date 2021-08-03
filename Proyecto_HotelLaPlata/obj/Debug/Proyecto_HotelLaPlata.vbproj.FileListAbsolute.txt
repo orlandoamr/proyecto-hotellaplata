@@ -104,8 +104,6 @@ C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmBuscarCliente.resources
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmBuscarDepartamentos.resources
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmBuscarPais.resources
-C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmConfiguracion.resources
-C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmEditarUsurarios.resources
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmGastosAdicionales.resources
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmNuevaVenta.resources
 C:\Users\orlan\OneDrive\Documentos\UNIVERSIDAD\DS\Proyecto_HotelLaPlata\Proyecto_HotelLaPlata\obj\Debug\Proyecto_HotelLaPlata.frmInicio2.resources

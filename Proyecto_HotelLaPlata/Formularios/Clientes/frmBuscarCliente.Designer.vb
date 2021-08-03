@@ -176,7 +176,7 @@ Partial Class frmBuscarCliente
         Me.Controls.Add(Me.txtParametro)
         Me.Name = "frmBuscarCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmBuscarCliente"
+        Me.Text = "Buscar clientes"
         CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

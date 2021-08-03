@@ -16,7 +16,7 @@ Public Class clsDBConexion
             conexion.ConnectionString = "Data Source=(local);Initial Catalog=hotel_la_plata;Integrated Security=True"
             conexion.Open()
         Catch ex As Exception
-            MessageBox.Show("Ocurrió un error en la conexión al servidor de la base de datos, comuníquese con el administrador del servidor.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MsgErrorConexion()
         End Try
 
     End Sub

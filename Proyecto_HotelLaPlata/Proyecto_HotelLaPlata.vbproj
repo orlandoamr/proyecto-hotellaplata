@@ -102,7 +102,6 @@
     <Compile Include="Clases\clsFuncionesGenerales.vb" />
     <Compile Include="Clases\clsGastosAdicionales.vb" />
     <Compile Include="Clases\clsHabitaciones.vb" />
-    <Compile Include="Clases\clsLogin.vb" />
     <Compile Include="Clases\clsPaises.vb" />
     <Compile Include="Clases\clsProductos.vb" />
     <Compile Include="Clases\clsSeguridad.vb" />
@@ -213,7 +212,6 @@
     <Compile Include="Formularios\Ventas\frmNuevaVenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Utilidades\dbConec.vb" />
     <Compile Include="Formularios\Clientes\frmBuscarCliente.Designer.vb">
       <DependentUpon>frmBuscarCliente.vb</DependentUpon>
     </Compile>
@@ -230,18 +228,6 @@
       <DependentUpon>frmBuscarPais.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Paises\frmBuscarPais.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Usuarios\frmConfiguracion.Designer.vb">
-      <DependentUpon>frmConfiguracion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Usuarios\frmConfiguracion.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Usuarios\frmEditarUsurarios.Designer.vb">
-      <DependentUpon>frmEditarUsurarios.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Usuarios\frmEditarUsurarios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Gastos Adicionales\frmGastosAdicionales.Designer.vb">
@@ -292,14 +278,13 @@
     <Compile Include="Formularios\Ventas\frmVerDetallesVentas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Utilidades\Funciones.vb" />
+    <Compile Include="Utilidades\mdlFunciones.vb" />
     <Compile Include="Formularios\Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Utilidades\mdlFuncionesGlobales.vb" />
     <Compile Include="Utilidades\mdlMensajes.vb" />
     <Compile Include="Utilidades\mdlQueries.vb" />
     <Compile Include="Utilidades\mdlValidacionesGlobales.vb" />
@@ -381,14 +366,8 @@
     <EmbeddedResource Include="Formularios\Paises\frmBuscarPais.resx">
       <DependentUpon>frmBuscarPais.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuarios\frmConfiguracion.resx">
-      <DependentUpon>frmConfiguracion.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Ventas\frmBuscarVenta.resx">
       <DependentUpon>frmBuscarVenta.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuarios\frmEditarUsurarios.resx">
-      <DependentUpon>frmEditarUsurarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Gastos Adicionales\frmGastosAdicionales.resx">
       <DependentUpon>frmGastosAdicionales.vb</DependentUpon>
