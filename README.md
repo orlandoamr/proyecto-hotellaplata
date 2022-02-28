@@ -10,4 +10,4 @@ Las tecnologías utilizadas fueron:
 * SQL Server 2019
 * Visual Studio 2019 (IDE)
 
-Documentación del proyecto: [a link](https://drive.google.com/drive/folders/1ykaClQsjlfbfN5eSS_AhAYfZLmByX6zL)
+[Documentación del proyecto](https://drive.google.com/drive/folders/1ykaClQsjlfbfN5eSS_AhAYfZLmByX6zL)
